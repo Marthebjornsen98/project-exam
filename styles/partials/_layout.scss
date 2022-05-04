@@ -1,0 +1,170 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Overpass:wght@300;400;600;700&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  font-family: "Raleway", Helvetica, sans-serif;
+}
+
+main {
+  width: 95%;
+  max-width: 1400px;
+  min-width: 320px;
+  margin: auto;
+}
+
+//Fonts
+a {
+  color: inherit;
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  color: $font-color;
+}
+
+h2 {
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: $font-color;
+}
+
+h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: $font-color;
+}
+
+h4 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: $font-color;
+}
+
+.body-text {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5rem;
+  color: $font-color;
+}
+
+.body-xl {
+  font-size: 1.125rem;
+  font-weight: 400;
+  color: $font-color;
+}
+
+.active {
+  font-weight: 700;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.semi-bold {
+  font-weight: 600;
+}
+
+.inactive {
+  font-weight: 500;
+
+  &:hover {
+    font-weight: 700;
+  }
+}
+
+//Buttons
+.cta__grass {
+  background-color: $grass;
+  padding: 13px 45px;
+  color: $white;
+  border: none;
+  font-size: 1rem;
+  font-weight: 700;
+  border-radius: 10px;
+
+  &:hover {
+    background-color: $forest;
+    color: $white;
+    cursor: pointer;
+  }
+}
+
+.cta__sage {
+  background-color: $sage;
+  padding: 13px 45px;
+  color: $forest;
+  border: none;
+  font-size: 1rem;
+  font-weight: 700;
+  border-radius: 10px;
+
+  &:hover {
+    background-color: $grass;
+    color: $white;
+    cursor: pointer;
+  }
+}
+
+// Hover button, grow bigger
+.hvr-grow {
+  display: inline-block;
+  vertical-align: middle;
+  transform: translateZ(0);
+  cursor: pointer;
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  transition-duration: 0.3s;
+  transition-property: transform;
+}
+
+.hvr-grow:hover,
+.hvr-grow:focus,
+.hvr-grow:active {
+  transform: scale(1.03);
+}
+
+// Inputs
+.input {
+  border: none;
+  background-color: $input-color;
+  color: $font-color;
+  height: 60px;
+  width: 100%;
+  border-radius: 10px;
+  padding-left: 20px;
+}
+
+//Icons
+.icon {
+  color: $light-font-color;
+  font-size: 1.875rem;
+
+  &:hover {
+    color: $forest;
+  }
+}
+
+// Index styles
+.hotel__wrapper {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin: 100px 0px;
+}
+
+.hotelCard__wrapper {
+  margin-left: 30px;
+}
+
+// Hidden
+.hidden {
+  display: hidden;
+}
