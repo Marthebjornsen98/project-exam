@@ -87,6 +87,10 @@ export const HeroBanner = styled.div`
       color: #434343;
       font-size: 1.25rem;
       margin-top: 10px;
+
+      &:hover {
+        cursor: pointer;
+      }
     }
 
     &__search--button {

@@ -25,6 +25,10 @@ export const SignUpWrapper = styled.div`
 
     &__input {
       border-radius: 10px 0px 0px 10px;
+
+      &::placeholder {
+        color: #a0a0a0;
+      }
     }
 
     &__btn {

@@ -52,7 +52,15 @@ const Header = ({ id }) => {
           </Link>
         </li>
       </ul>
-      <button className="cta__grass hvr-grow">Log in</button>
+      <button
+        className={
+          Router.pathname === "/logIn"
+            ? "cta__grass hvr-grow"
+            : "cta__grass hvr-grow"
+        }
+      >
+        Log in
+      </button>
     </Nav>
   );
 };
