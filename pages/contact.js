@@ -56,30 +56,28 @@ const Contact = () => {
             {({ errors, touched }) => (
               <Form>
                 <div className="contact__wrapper">
-                  <div className="contact__form--wrapper">
-                    <div className="">
-                      <label className="contact__label">Name</label>
-                      <Field name="name" className="input contact__input" />
-                      {errors.fullName && touched.fullName ? (
-                        <div className="input__error">{errors.fullName}</div>
-                      ) : null}
-                      <label className="">Email</label>
-                      <Field name="email" className="input contact__input" />
-                      {errors.email && touched.email ? (
-                        <div className="input__error">{errors.email}</div>
-                      ) : null}
-                    </div>
-
-                    <label className="contact__label">Subject</label>
-                    <Field
-                      name="password"
-                      type="password"
-                      className="input contact__input"
-                    />
-                    {errors.subject && touched.subject ? (
-                      <div className="input__error">{errors.subject}</div>
+                  <div className="">
+                    <label className="contact__label">Name</label>
+                    <Field name="name" className="input contact__input" />
+                    {errors.fullName && touched.fullName ? (
+                      <div className="input__error">{errors.fullName}</div>
+                    ) : null}
+                    <label className="">Email</label>
+                    <Field name="email" className="input contact__input" />
+                    {errors.email && touched.email ? (
+                      <div className="input__error">{errors.email}</div>
                     ) : null}
                   </div>
+
+                  <label className="contact__label">Subject</label>
+                  <Field
+                    name="password"
+                    type="password"
+                    className="input contact__input"
+                  />
+                  {errors.subject && touched.subject ? (
+                    <div className="input__error">{errors.subject}</div>
+                  ) : null}
                 </div>
 
                 <div className="">
