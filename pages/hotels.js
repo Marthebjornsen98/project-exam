@@ -1,4 +1,5 @@
 import Head from "next/head";
+import HeroSearch from "../components/hero/heroSerach";
 import HotelCard from "../components/hotelCards";
 import Header from "../components/header";
 import Filter from "../components/filter";
@@ -24,6 +25,7 @@ const Hotels = ({ hotels }) => {
       </Head>
       <Header />
       <main>
+        <HeroSearch />
         <div className="hotel__wrapper">
           <Filter />
           <div className="hotelCard__wrapper">

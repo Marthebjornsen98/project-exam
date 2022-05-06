@@ -293,7 +293,7 @@ const HotelDetails = ({
               <div className="facilities__icon--wrapper">
                 <Image src={fitnessIcon} width={40} height={40} />
                 <p className="facilities__icon--text">
-                  {gym ? "Fitness centre" : "No fitness centre"}
+                  {gym ? "Fitness center" : "No fitness centre"}
                 </p>
               </div>
             </div>

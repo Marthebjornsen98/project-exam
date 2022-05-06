@@ -40,6 +40,10 @@ export const HotelCards = styled.div`
       padding-left: 10px;
     }
 
+    &__description {
+      width: 90%;
+    }
+
     &__details--wrapper {
       margin-top: 20px;
       display: flex;
@@ -49,6 +53,7 @@ export const HotelCards = styled.div`
 
     &__details {
       margin-bottom: 8px;
+      font-size: 1rem;
     }
 
     &__cancellation {

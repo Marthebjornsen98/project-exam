@@ -1,4 +1,5 @@
 import { RangeBarWrapper } from "./rangeBar.style";
+import { useState } from "react";
 
 import * as React from "react";
 import Box from "@mui/material/Box";
@@ -9,31 +10,33 @@ function valuetext(value) {
 }
 
 const RangeBar = () => {
-  const [value, setValue] = React.useState([0, 500]);
+  const [value, setValue] = useState([0, 500]);
 
-  const handleChange = (event, newValue) => {
+  const handleChange = (e, newValue) => {
     setValue(newValue);
   };
 
   return (
-    <RangeBarWrapper>
-      <div className="filter__number--wrapper">
-        {value.map((price) => {
-          return <p className="filter__numbers">${price}</p>;
-        })}
-      </div>
+    <>
+      <RangeBarWrapper>
+        <div className="filter__number--wrapper">
+          {value.map((price) => {
+            return <p className="filter__numbers">${price}</p>;
+          })}
+        </div>
 
-      <Box>
-        <Slider
-          getAriaLabel={() => "Temperature range"}
-          value={value}
-          onChange={handleChange}
-          getAriaValueText={valuetext}
-          min={0}
-          max={500}
-        />
-      </Box>
-    </RangeBarWrapper>
+        <Box>
+          <Slider
+            getAriaLabel={() => "Temperature range"}
+            value={value}
+            onChange={handleChange}
+            getAriaValueText={valuetext}
+            min={0}
+            max={500}
+          />
+        </Box>
+      </RangeBarWrapper>
+    </>
   );
 };
 

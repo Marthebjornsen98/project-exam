@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const HotelDetailsWrapper = styled.div`
   display: flex;
-  width: 95%;
+  width: 100%;
   margin: 50px auto;
   justify-content: space-between;
 
@@ -52,7 +52,7 @@ export const HotelDetailsWrapper = styled.div`
 `;
 
 export const HotelDetail__about = styled.div`
-  width: 90%;
+  width: 100%;
   margin: 150px auto 100px;
 
   .detailAbout {
@@ -92,7 +92,7 @@ export const HotelDetail__about = styled.div`
 `;
 
 export const Facilities = styled.div`
-  width: 90%;
+  width: 100%;
   margin: 100px auto;
 
   .facilities {
@@ -113,7 +113,7 @@ export const Facilities = styled.div`
 `;
 
 export const GuestReview = styled.div`
-  width: 90%;
+  width: 100%;
   margin: auto;
 
   .progress {
@@ -150,7 +150,7 @@ export const GuestReview = styled.div`
 `;
 
 export const ProgressButton = styled.div`
-  width: 90%;
+  width: 100%;
   margin: 40px auto 100px;
   display: flex;
   justify-content: flex-end;

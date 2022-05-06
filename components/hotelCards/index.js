@@ -35,7 +35,7 @@ const HotelCard = ({
         <h3 className="hotelContent__price">
           ${price}/<span className="hotelContent__price--span">per night</span>
         </h3>
-        <p className="body-text">{description}</p>
+        <p className="body-text hotelContent__description">{description}</p>
         <div className="hotelContent__details--wrapper">
           <div>
             <h4 className="hotelContent__details">
