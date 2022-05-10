@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { HotelCards } from "./hotelCards.style";
 import Link from "next/link";
+import { Icon } from "@iconify/react";
 
 const HotelCard = ({
   id,
@@ -10,6 +11,7 @@ const HotelCard = ({
   description,
   details: { balcony, free_wifi, bed_size, persons, metro },
   hotels_image,
+  stars,
 }) => {
   const myLoader = () => {
     return hotels_image;
@@ -22,7 +24,7 @@ const HotelCard = ({
           loader={myLoader}
           src={hotels_image}
           width={510}
-          height={360}
+          height={380}
           href={"/hotelDetails/" + id}
           alt="This is a hotelroom with a nice bed and quality room."
         />
@@ -32,6 +34,24 @@ const HotelCard = ({
           <h3 className="hotelContent__title">{title}</h3>
         </Link>
         <p className="hotelContent__location">{location}</p>
+        <div className="hotelContent__star">
+          {stars.map(({ id, star }) => {
+            if (star) {
+              return (
+                <div key={id} className="hotelContent__star--wrapper">
+                  <Icon icon="clarity:star-solid" color="#57b15b" />
+                </div>
+              );
+            } else {
+              return (
+                <div key={id} className="hotelContent__star--wrapper">
+                  <Icon icon="clarity:star-line" color="#57b15b" />
+                </div>
+              );
+            }
+          })}
+        </div>
+
         <h3 className="hotelContent__price">
           ${price}/<span className="hotelContent__price--span">per night</span>
         </h3>

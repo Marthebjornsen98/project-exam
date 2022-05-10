@@ -29,10 +29,19 @@ export const HotelCards = styled.div`
       margin: 5px;
     }
 
+    &__star {
+      display: flex;
+      margin-top: 10px;
+
+      &--wrapper {
+        margin-right: 6px;
+      }
+    }
+
     &__price {
       color: #1c4726;
       font-family: var(--secondary-font);
-      margin-top: 30px;
+      margin-top: 20px;
     }
 
     &__price--span {

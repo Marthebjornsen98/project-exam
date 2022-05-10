@@ -82,6 +82,10 @@ export const HeroBanner = styled.div`
       display: none;
     }
 
+    &__inputSearch {
+      font-size: 1rem;
+    }
+
     &__inputName {
       font-weight: 700;
       color: #434343;
@@ -109,5 +113,20 @@ export const HeroBanner = styled.div`
       color: #fff;
       font-size: 2rem;
     }
+  }
+
+  .css-wmw4vi-ReactDropdownSelect {
+    min-width: 150px;
+    max-width: 250px;
+    width: 250px;
+    border: 2px solid #f1f1f1;
+    border-radius: 8px;
+    margin-top: 5px;
+    font-size: 1rem;
+    font-weight: 500;
+  }
+
+  .css-148o527-ItemComponent:hover {
+    background-color: #dae8db;
   }
 `;

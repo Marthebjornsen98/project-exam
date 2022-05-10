@@ -3,6 +3,7 @@ import Logo from "../../public/assets/holidaze-logo.svg";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { Nav } from "./header.style";
+import { useState } from "react";
 
 const Header = ({ id }) => {
   const Router = useRouter();

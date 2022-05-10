@@ -38,6 +38,7 @@ const Hotels = ({ hotels }) => {
                 description,
                 details,
                 hotels_image,
+                stars,
               }) => {
                 return (
                   <HotelCard
@@ -49,6 +50,7 @@ const Hotels = ({ hotels }) => {
                     description={description}
                     details={details}
                     hotels_image={hotels_image}
+                    stars={stars}
                   />
                 );
               }

@@ -5,7 +5,7 @@ import hotelIcon from "../../public/assets/hotel.svg";
 import planeIcon from "../../public/assets/plane.svg";
 import HeroSearch from "./heroSerach";
 
-const Hero = () => {
+const Hero = (props) => {
   return (
     <div className="heroImg">
       <HeroBanner>

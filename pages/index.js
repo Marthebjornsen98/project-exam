@@ -7,8 +7,19 @@ import Recomandations from "../components/recomendations";
 import Collage from "../components/imgCollage";
 import CostumerReviewContainer from "../components/costumerReview";
 import SignUp from "../components/signUp";
+import { useState, useEffect } from "react";
 
 export default function Home() {
+  // const [hotel, setHotel] = useState([]);
+
+  // useEffect(() => {
+  //   async () => {
+  //     const res = await fetch("http://localhost:1337/holidazes/");
+  //     const data = await res.json();
+  //     setHotel(data);
+  //   };
+  // });
+
   return (
     <div>
       <Head>
