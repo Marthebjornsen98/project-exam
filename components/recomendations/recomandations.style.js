@@ -58,52 +58,49 @@ export const RecomandationWrapper = styled.div`
     }
 
     ${media.lessThan("1040px")`
+      &__wrapper {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        max-width: 100%;
+        margin-bottom: 50px;
+      }
 
-.recomendation {
-  flex-direction: column;
+      &__description {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        margin-left: 30px;
+      }
 
-    &__wrapper {
-      display: flex;
-      align-items: center;
-      width: 100%;
-      max-width: 100%;
-      margin-bottom: 30px;
-    }
+      &__icon--wrapper {
+        margin-top: 0px;
+      }
 
-    &__description {
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      margin-left: 30px;
-    }
+      &__text--wrapper {
+        margin-top: 10px;
+      }
 
-    &__icon--wrapper {
-      margin-top: 0px;
-    }
+      &__btn--wrapper {
+        width: 100%;
+        margin-top: 10px;
+      }
 
-    &__text--wrapper {
-      margin-top: 10px;
-    }
-
-    &__btn--wrapper {
-      width: 100%;
-      margin-top: 10px;
-    }
-
-    &__btn {
-      padding: 10px 40px;
-    }
-`}
+      &__btn {
+        padding: 10px 40px;
+      }
+    `}
 
     ${media.lessThan("836px")`
 
     &__wrapper {
       flex-direction: column;
+      margin-bottom: 50px;
     }
 
     &__description {
-      width: 85%;
-      margin-top: 20px;
+      width: 98%;
+      margin: 30px auto 0px auto;
     }
   `}
   }

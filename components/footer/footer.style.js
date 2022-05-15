@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import media from "styled-media-query";
 
 export const FooterContainer = styled.div`
   background-color: #dae8db;
@@ -13,19 +14,20 @@ export const FooterContainer = styled.div`
     &__top--wrapper {
       display: flex;
       justify-content: space-between;
-      align-items: flex-start;
+      align-items: flex-end;
     }
 
     &__links--wrapper {
       display: flex;
       width: 40%;
+      margin-bottom: 0px;
+      align-items: center;
       justify-content: space-between;
     }
 
     &__links {
       color: #1c4726;
       font-weight: 700;
-      margin-bottom: 10px;
     }
 
     &__bottom--wrapper {
@@ -40,4 +42,30 @@ export const FooterContainer = styled.div`
       width: 100%;
     }
   }
+
+  ${media.lessThan("600px")`
+      .footer__links--wrapper {
+        width: 55%;
+      }
+
+      .footer__bottom--wrapper {
+        margin-top: 30px;
+      }
+  `}
+
+  ${media.lessThan("488px")`
+      .footer__top--wrapper {
+        align-items: flex-start;
+      }
+
+      .footer__links--wrapper {
+        flex-direction: column;
+        align-items: flex-end;
+      }
+
+      .footer__links {
+        font-size: 1rem;
+        margin-bottom: 20px;
+      }
+  `}
 `;

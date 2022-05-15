@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import media from "styled-media-query";
 
 export const ImgCollage = styled.div`
   display: flex;
@@ -36,4 +37,17 @@ export const ImgCollage = styled.div`
       cursor: pointer;
     }
   }
+
+  ${media.lessThan("768px")`
+    .imgCollage {
+      flex-direction: column;
+
+      &__image--wrapper {
+      position: relative;
+      width: 100%;
+      height: 450px;
+      margin-bottom: 20px;
+    }
+    }
+  `}
 `;

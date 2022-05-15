@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import media from "styled-media-query";
 
 export const SignUpWrapper = styled.div`
   margin: 150px auto;
@@ -11,7 +12,7 @@ export const SignUpWrapper = styled.div`
     align-items: center;
 
     &__title--wrapper {
-      width: 40%;
+      width: 547px;
       text-align: center;
       display: flex;
       justify-content: center;
@@ -38,4 +39,34 @@ export const SignUpWrapper = styled.div`
       margin-top: 10px;
     }
   }
+
+  ${media.lessThan("1024px")`
+    .signUp__form {
+      width: 80%;
+    }
+  `}
+
+  ${media.lessThan("768px")`
+    .signUp__btn {
+        padding: 10px 15px;
+        font-size: 0.875rem;
+      }
+  `}
+
+  ${media.lessThan("572px")`
+
+    .signUp__title--wrapper {
+      width: 95%;
+    }
+
+    .signUp__title {
+      font-size: 1.875rem;
+      line-height: 2.5rem;
+    }
+
+    .signUp__form {
+        width: 95%;
+    }
+
+  `}
 `;

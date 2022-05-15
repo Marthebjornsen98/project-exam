@@ -9,7 +9,8 @@ export const HeroImg = styled.div`
   background-repeat: no-repeat;
   background-size: cover;
 
-  ${media.lessThan("916px")`
-    background-image: url(../backgroundImages/backgroundimage_tablet.jpg);
+  ${media.lessThan("1054px")`
+    background-image: url(../backgroundImages/background-image_tablet.jpeg);
+    background-position: center;
   `}
 `;

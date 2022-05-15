@@ -17,6 +17,7 @@ export const Nav = styled.div`
 
     &__link {
       color: #1c4726;
+      font-size: 1rem;
     }
   }
 `;

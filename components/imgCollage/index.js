@@ -18,26 +18,13 @@ const Collage = () => {
       <h3>Most popular places</h3>
       <div className="imgCollage">
         <div className="imgCollage__image--wrapper">
-          {isHovered ? (
-            <Image
-              src={collageImg1}
-              alt="Image of one of the most popular places"
-              objectFit="cover"
-              layout="fill"
-              className="imgCollage__image"
-            />
-          ) : (
-            <div className="imgCollage__overlay">
-              <h3>Lofoten</h3>
-              <Image
-                src={collageImg1}
-                alt="Image of one of the most popular places"
-                objectFit="cover"
-                layout="fill"
-                className="imgCollage__image"
-              />
-            </div>
-          )}
+          <Image
+            src={collageImg1}
+            alt="Image of one of the most popular places"
+            objectFit="cover"
+            layout="fill"
+            className="imgCollage__image"
+          />
         </div>
         <div className="imgCollage__image--wrapper">
           <Image

@@ -22,7 +22,7 @@ export default function Home() {
       </Head>
       <Hero />
       <main>
-        <Recomandations />
+        <Recomandations />;
         <Collage />
         <CostumerReviewContainer />
         <SignUp />

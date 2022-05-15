@@ -1,6 +1,10 @@
-import { HeroBanner } from "../herobanner.style";
 import { Icon } from "@iconify/react";
 import { useState } from "react";
+
+// Styles
+import { HeroSearchWrapper } from "./heroSearch.style";
+
+// Datepicker
 import { DateRangePicker } from "rsuite";
 import "rsuite/dist/rsuite.min.css";
 const styles = { width: 240, display: "block" };
@@ -28,95 +32,82 @@ const HeroSearch = () => {
   };
 
   return (
-    <div>
-      <HeroBanner>
-        <div className="heroContent">
-          <div className="heroContent__container--wrapper">
-            <div className="heroContent__container">
-              <div>
-                <span className="heroContent__supportingText">Location</span>
-                <form>
-                  <input type="search" className="heroContent__input" />
-                  <label className="heroContent__inputName heroContent__inputSearch">
-                    Where are you going?
-                  </label>
-                </form>
-              </div>
-            </div>
-            <div className="heroContent__container">
-              <div>
-                <span className="heroContent__supportingText">Travelers</span>
-                <form>
-                  <input type="text" className="heroContent__input" />
-                  <select
-                    value={guestValue}
-                    onChange={handleChangeGuests}
-                    className="heroContent__select-guests heroContent__inputName"
-                  >
-                    <option>Add guests</option>
-                    {options.map(({ id, label }) => {
-                      return (
-                        <option key={id} value={guestValue}>
-                          {label}
-                        </option>
-                      );
-                    })}
-                  </select>
-                </form>
-              </div>
-            </div>
-
-            <div className="heroContent__container">
-              <div>
-                <span className="heroContent__supportingText">Add date</span>
-                <form>
-                  {isShowing ? (
-                    <DateRangePicker
-                      size="md"
-                      placeholder="Select date"
-                      style={styles}
-                    />
-                  ) : (
-                    <label
-                      className="heroContent__inputName"
-                      onClick={() => setIsShowing(true)}
-                    >
-                      Check in/out
-                    </label>
-                  )}
-                </form>
-              </div>
-            </div>
-
-            <div className="heroContent__container">
-              <div>
-                <span className="heroContent__supportingText">Rooms</span>
-                <form>
-                  <input type="text" className="heroContent__input" />
-                  <select
-                    value={roomValue}
-                    onChange={handleChangeRooms}
-                    className="heroContent__select-guests heroContent__inputName"
-                  >
-                    <option>Add rooms</option>
-                    {options.map(({ id, label }) => {
-                      return (
-                        <option key={id} value={roomValue}>
-                          {label}
-                        </option>
-                      );
-                    })}
-                  </select>
-                </form>
-              </div>
-            </div>
-            <button className="heroContent__search--button">
-              <Icon icon="charm:search" className="heroContent__search--icon" />
-            </button>
-          </div>
+    <HeroSearchWrapper>
+      <div className="heroSearch">
+        <div className="heroSearch__container">
+          <span className="heroSearch__supportingText">Location</span>
+          <form>
+            <label className="heroSearch__inputName">
+              Where are you going?
+            </label>
+          </form>
         </div>
-      </HeroBanner>
-    </div>
+
+        <div className="heroSearch__container">
+          <span className="heroSearch__supportingText">Travelers</span>
+          <form>
+            <select
+              value={guestValue}
+              onChange={handleChangeGuests}
+              className="heroSearch__inputName"
+            >
+              <option>Add guests</option>
+              {options.map(({ id, label }) => {
+                return (
+                  <option key={id} value={guestValue}>
+                    {label}
+                  </option>
+                );
+              })}
+            </select>
+          </form>
+        </div>
+
+        <div className="heroSearch__container">
+          <span className="heroSearch__supportingText">Add date</span>
+          <form>
+            {isShowing ? (
+              <DateRangePicker
+                size="md"
+                placeholder="Select date"
+                style={styles}
+              />
+            ) : (
+              <label
+                className="heroSearch__inputName"
+                onClick={() => setIsShowing(true)}
+              >
+                Check in/out
+              </label>
+            )}
+          </form>
+        </div>
+
+        <div className="heroSearch__container">
+          <span className="heroSearch__supportingText">Rooms</span>
+          <form>
+            <select
+              value={roomValue}
+              onChange={handleChangeRooms}
+              className="heroSearch__inputName"
+            >
+              <option>Add rooms</option>
+              {options.map(({ id, label }) => {
+                return (
+                  <option key={id} value={roomValue}>
+                    {label}
+                  </option>
+                );
+              })}
+            </select>
+          </form>
+        </div>
+
+        <button className="heroSearch__button">
+          <Icon icon="charm:search" className="heroSearch__button--icon" />
+        </button>
+      </div>
+    </HeroSearchWrapper>
   );
 };
 

@@ -5,7 +5,9 @@ const SignUp = () => {
     <SignUpWrapper>
       <div className="signUp">
         <div className="signUp__title--wrapper">
-          <h2>Subscribe to our newsletter & get the latest news</h2>
+          <h2 className="signUp__title">
+            Subscribe to our newsletter & get the latest news
+          </h2>
         </div>
         <form className="signUp__form">
           <input

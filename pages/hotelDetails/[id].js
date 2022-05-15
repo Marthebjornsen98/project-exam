@@ -1,6 +1,5 @@
 import Head from "next/head";
 import Image from "next/image";
-import Link from "next/link";
 import { Icon } from "@iconify/react";
 import { useState } from "react";
 
@@ -9,7 +8,7 @@ import { HotelCards } from "../../components/hotelCards/hotelCards.style";
 import { HotelDetailsWrapper } from "./id.style";
 
 //hotel detail icons
-import personIcon from "../../public/assets/person_icon.svg";
+import personIcon from "../../public/icons/person_icon.svg";
 import numberReviewIcon from "../../public/assets/number_review_icon.svg";
 import guestReviewIcon from "../../public/assets/guest_review_icon.svg";
 import nonSmokingIcon from "../../public/assets/nonSmoking_icon.svg";
