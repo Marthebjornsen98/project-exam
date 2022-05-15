@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import media from "styled-media-query";
 
 export const RecomandationWrapper = styled.div`
   margin: 100px auto;
@@ -15,15 +16,15 @@ export const RecomandationWrapper = styled.div`
       min-width: 320px;
     }
 
-    &__img {
-      border-radius: 10px;
-    }
-
     &__icon--wrapper {
       display: flex;
       justify-content: space-between;
       width: 95%;
       margin-top: 20px;
+    }
+
+    &__img {
+      border-radius: 10px;
     }
 
     &__icons {
@@ -55,5 +56,55 @@ export const RecomandationWrapper = styled.div`
     &__btn {
       width: fit-content;
     }
+
+    ${media.lessThan("1040px")`
+
+.recomendation {
+  flex-direction: column;
+
+    &__wrapper {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      max-width: 100%;
+      margin-bottom: 30px;
+    }
+
+    &__description {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      margin-left: 30px;
+    }
+
+    &__icon--wrapper {
+      margin-top: 0px;
+    }
+
+    &__text--wrapper {
+      margin-top: 10px;
+    }
+
+    &__btn--wrapper {
+      width: 100%;
+      margin-top: 10px;
+    }
+
+    &__btn {
+      padding: 10px 40px;
+    }
+`}
+
+    ${media.lessThan("836px")`
+
+    &__wrapper {
+      flex-direction: column;
+    }
+
+    &__description {
+      width: 85%;
+      margin-top: 20px;
+    }
+  `}
   }
 `;

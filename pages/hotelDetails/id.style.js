@@ -53,7 +53,7 @@ export const HotelDetailsWrapper = styled.div`
 
 export const HotelDetail__about = styled.div`
   width: 100%;
-  margin: 150px auto 100px;
+  margin: 220px auto 100px;
 
   .detailAbout {
     display: flex;
@@ -61,6 +61,10 @@ export const HotelDetail__about = styled.div`
 
     &__title {
       width: 48%;
+    }
+
+    &__map {
+      border-radius: 10px;
     }
 
     &__map--details {

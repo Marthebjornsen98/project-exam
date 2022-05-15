@@ -1,24 +1,45 @@
 import styled from "styled-components";
+import media from "styled-media-query";
 
 export const ContactWrapper = styled.div`
-  display: flex;
-  align-items: center;
-
   .contact {
-    width: 45%;
-    max-width: 800px;
-    margin: 0px auto 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &__img {
+      position: relative;
+      width: 40%;
+      height: 100vh;
+      padding: 20px 0px 0px 50px;
+    }
+
+    &__nav {
+      width: 100%;
+
+      &--wrapper {
+        width: 55%;
+      }
+    }
+
+    &__right-side {
+      width: 52%;
+      margin-right: 50px;
+      display: flex;
+      height: 100vh;
+      flex-direction: column;
+    }
+
+    &__form {
+      margin-top: 40px;
+    }
 
     &__title--wrapper {
-      margin-bottom: 40px;
+      margin-bottom: 30px;
     }
 
     &__title {
-      margin-bottom: 10px;
-    }
-
-    &__label {
-      font-weight: 600;
+      margin-bottom: 5px;
     }
 
     &__input {
@@ -26,8 +47,9 @@ export const ContactWrapper = styled.div`
       margin-top: 10px;
 
       &--textarea {
-        height: 130px;
+        height: 120px;
         margin-top: 10px;
+        padding-top: 20px;
       }
     }
 
@@ -35,7 +57,7 @@ export const ContactWrapper = styled.div`
       display: flex;
       justify-content: space-between;
       width: 100%;
-      margin-bottom: 30px;
+      margin-bottom: 20px;
     }
 
     &__name-email {
@@ -49,7 +71,31 @@ export const ContactWrapper = styled.div`
     &__btn--wrapper {
       display: flex;
       justify-content: flex-end;
-      margin-top: 30px;
+      margin-top: 20px;
     }
+
+    ${media.lessThan("1024px")`
+    &__img {
+      width: 25%;
+      padding: 20px 0px 0px 20px;
+    }
+
+    &__right-side {
+      width: 69%;
+      margin-right: 20px;
+    }
+  `}
+
+    ${media.lessThan("768px")`
+
+    &__img {
+      display: none;
+    }
+
+    &__right-side {
+      width: 100%;
+      margin: 0px 20px;
+    }
+  `}
   }
 `;

@@ -1,6 +1,8 @@
 import Head from "next/head";
 import Image from "next/image";
-import Header from "../../components/header";
+import Link from "next/link";
+import { Icon } from "@iconify/react";
+import { useState } from "react";
 
 // Hotel img and description
 import { HotelCards } from "../../components/hotelCards/hotelCards.style";
@@ -30,7 +32,13 @@ import {
   ProgressButton,
 } from "./id.style";
 
+// Components
+import Header from "../../components/header";
+import Checkout from "../../components/checkout";
+import MessageModal from "../../components/Modals/MessageModal";
+import ChatModal from "../../components/Modals/ChatModal";
 import CostumerReviewContainer from "../../components/costumerReview";
+import Footer from "../../components/footer";
 
 // Swiper
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -41,9 +49,6 @@ import "swiper/css/pagination";
 // Progress bar
 import { Progress } from "react-sweet-progress";
 import "react-sweet-progress/lib/style.css";
-
-// Footer
-import Footer from "../../components/footer";
 
 export const getStaticPaths = async () => {
   const res = await fetch("http:localhost:1337/holidazes");
@@ -92,6 +97,7 @@ const HotelDetails = ({
     about_title,
     about,
     map,
+    area,
     adress,
     facilities: {
       teaCoffee_maker,
@@ -104,7 +110,6 @@ const HotelDetails = ({
       restaurant,
       swimming_pool,
     },
-    customer_review,
   },
 }) => {
   const myLoader_1 = () => {
@@ -122,6 +127,10 @@ const HotelDetails = ({
   const myLoader_map = () => {
     return map;
   };
+
+  const [isOpen, setIsOpen] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
+  const [isCheckout, setIsCheckout] = useState(false);
 
   return (
     <div>
@@ -222,9 +231,24 @@ const HotelDetails = ({
                     <h4 className="hotelContent__cancellation">
                       Free cancellation
                     </h4>
-                    <div href={"/hotelDetails/" + id}>
-                      <a className="cta__sage hvr-grow">Reserve room</a>
+                    <div>
+                      <button
+                        className="cta__sage hvr-grow"
+                        onClick={() => setIsCheckout(true)}
+                      >
+                        Reserve room
+                      </button>
                     </div>
+                    {isCheckout && (
+                      <Checkout
+                        setIsCheckout={setIsCheckout}
+                        title={title}
+                        adress={adress}
+                        price={price}
+                        slider_img1={slider_img1}
+                        slider_img_alt_1={slider_img_alt_1}
+                      />
+                    )}
                   </div>
                 </div>
               </div>
@@ -250,6 +274,21 @@ const HotelDetails = ({
           </HotelCards>
         </HotelDetailsWrapper>
 
+        <div className="modal__chat">
+          <div className="modal__chat--wrapper">
+            {isVisible && <ChatModal setIsVisible={setIsVisible} />}
+            <button
+              className="cta__sage modal__chat--btn"
+              onClick={() => setIsOpen(true)}
+            >
+              <Icon icon="carbon:dot-mark" />
+              <Icon icon="carbon:dot-mark" />
+            </button>
+          </div>
+        </div>
+
+        {isOpen && <MessageModal setIsOpen={setIsOpen} />}
+
         <HotelDetail__about>
           <div className="detailAbout">
             <div className="detailAbout__title">
@@ -261,12 +300,17 @@ const HotelDetails = ({
                 src={map}
                 width={600}
                 height={300}
-                alt="Map over Oslo"
+                className="detailAbout__map"
+                alt={`Map over ${area}`}
                 loader={myLoader_map}
               />
               <div className="detailAbout__map--details">
                 <p className="detailAbout__adress">{adress}</p>
-                <a href="#" className="detailAbout__map--text">
+                <a
+                  target="_blank"
+                  href="https://www.google.com/maps"
+                  className="detailAbout__map--text"
+                >
                   View map
                 </a>
               </div>

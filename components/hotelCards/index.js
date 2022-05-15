@@ -58,21 +58,19 @@ const HotelCard = ({
         <p className="body-text hotelContent__description">{description}</p>
         <div className="hotelContent__details--wrapper">
           <div>
-            <h4 className="hotelContent__details">
-              {balcony ? "Balcony" : ""}
-            </h4>
-            <h4 className="hotelContent__details">
+            <p className="hotelContent__details">{balcony ? "Balcony" : ""}</p>
+            <p className="hotelContent__details">
               {free_wifi ? "Free Wifi" : ""}
-            </h4>
-            <h4 className="hotelContent__details">
+            </p>
+            <p className="hotelContent__details">
               {bed_size ? "Queen Size bed" : "King Size bed"}
-            </h4>
-            <h4 className="hotelContent__details">
+            </p>
+            <p className="hotelContent__details">
               {persons ? "Two Pers" : "Four Pers"}
-            </h4>
-            <h4 className="hotelContent__details">
+            </p>
+            <p className="hotelContent__details">
               {metro ? "Metro access" : ""}
-            </h4>
+            </p>
           </div>
           <div>
             <h4 className="hotelContent__cancellation">Free cancellation</h4>

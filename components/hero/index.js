@@ -1,13 +1,20 @@
 import Header from "../header/index";
-import { HeroBanner } from "./herobanner.style";
 import Image from "next/image";
-import hotelIcon from "../../public/assets/hotel.svg";
-import planeIcon from "../../public/assets/plane.svg";
+
+// Components
 import HeroSearch from "./heroSerach";
 
-const Hero = (props) => {
+// Icons
+import hotelIcon from "../../public/assets/hotel.svg";
+import planeIcon from "../../public/assets/plane.svg";
+
+// Styles
+import { HeroImg } from "./heroImg.style";
+import { HeroBanner } from "./herobanner.style";
+
+const Hero = () => {
   return (
-    <div className="heroImg">
+    <HeroImg>
       <HeroBanner>
         <Header />
         <div>
@@ -26,7 +33,7 @@ const Hero = (props) => {
           <HeroSearch />
         </div>
       </HeroBanner>
-    </div>
+    </HeroImg>
   );
 };
 

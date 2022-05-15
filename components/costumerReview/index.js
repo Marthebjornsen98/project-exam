@@ -26,7 +26,6 @@ const CostumerReviewContainer = () => {
       const elm = randomApi[i];
 
       randomReview = elm.customer_review;
-      console.log(randomReview);
 
       if (i === 0) {
         break;

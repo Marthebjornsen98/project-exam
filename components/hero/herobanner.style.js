@@ -80,6 +80,12 @@ export const HeroBanner = styled.div`
 
     &__input {
       display: none;
+
+      &--date {
+        border: none;
+        font-size: 1rem;
+        font-family: "Overpass";
+      }
     }
 
     &__inputSearch {
@@ -90,11 +96,17 @@ export const HeroBanner = styled.div`
       font-weight: 700;
       color: #434343;
       font-size: 1.25rem;
-      margin-top: 10px;
 
       &:hover {
         cursor: pointer;
       }
+    }
+
+    &__select-guests {
+      border: none;
+      font-weight: 700;
+      font-size: 1.25rem;
+      padding-right: 10px;
     }
 
     &__search--button {

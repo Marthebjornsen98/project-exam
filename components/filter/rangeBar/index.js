@@ -20,8 +20,12 @@ const RangeBar = () => {
     <>
       <RangeBarWrapper>
         <div className="filter__number--wrapper">
-          {value.map((price) => {
-            return <p className="filter__numbers">${price}</p>;
+          {value.map((price, index) => {
+            return (
+              <p className="filter__numbers" key={index}>
+                ${price}
+              </p>
+            );
           })}
         </div>
 

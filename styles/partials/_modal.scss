@@ -1,0 +1,170 @@
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 99;
+  width: 90%;
+  // margin-top: 40px;
+  max-width: 800px;
+  height: auto;
+  padding: 30px 30px 50px;
+  border-radius: 10px;
+  transform: translate(-50%, -50%);
+  background-color: $white;
+  box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.2);
+
+  &__close {
+    display: flex;
+    justify-content: flex-end;
+
+    &--btn {
+      font-size: 2rem;
+      color: #2c3e50;
+
+      &:hover {
+        cursor: pointer;
+        color: rgba(28, 71, 38, 0.8);
+      }
+    }
+
+    &--small {
+      font-size: 1.75rem;
+    }
+  }
+
+  &__content {
+    font-size: 14px;
+    color: #2c3e50;
+
+    &--contact-page {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  &__text {
+    width: 80%;
+    margin-top: 20px;
+  }
+
+  &__form {
+    margin-top: 20px;
+  }
+
+  &__form--wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__input--wrapper {
+    width: 49%;
+    margin-bottom: 30px;
+  }
+
+  &__input--container {
+    margin-bottom: 30px;
+  }
+
+  &__input {
+    height: 50px;
+    margin-top: 10px;
+  }
+
+  &__message {
+    height: 150px;
+    margin-top: 10px;
+    padding-top: 20px;
+  }
+
+  &__btn {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &__chat {
+    position: fixed;
+    right: 50px;
+    bottom: 50px;
+    z-index: 1;
+
+    &--wrapper {
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-end;
+    }
+
+    &--message {
+      display: flex;
+      align-items: flex-end;
+      width: 49%;
+      margin: 0px 40px 20px;
+      padding: 18px;
+      border-radius: 10px 10px 0px 10px;
+      background-color: #dae8db;
+      font-family: "Overpass";
+    }
+
+    &--text {
+      font-size: 1rem;
+      line-height: 1.5rem;
+    }
+
+    &--btn {
+      font-size: 1rem;
+      padding: 18px 15px 15px;
+      border-radius: 10px 10px 10px 0px;
+      font-family: "Overpass";
+      color: #57b15b;
+
+      &:hover {
+        cursor: pointer;
+        color: rgba(28, 71, 38, 0.5);
+      }
+    }
+  }
+
+  &__x--wrapper {
+    display: flex;
+    justify-content: flex-end;
+    margin-left: 10px;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  &__check {
+    display: flex;
+    justify-content: center;
+    font-size: 5rem;
+    color: #57b15b;
+    margin-bottom: 10px;
+  }
+}
+
+.modal-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  height: 100%;
+  width: 100%;
+  z-index: 2;
+}
+
+.modalCheckout {
+  margin-top: 0px;
+  border-radius: 0px;
+  width: 100%;
+  max-width: 1440px;
+  overflow-y: scroll;
+  height: 100vh;
+  padding: 0px;
+
+  &__content {
+    align-items: space-between;
+  }
+}

@@ -140,6 +140,21 @@ h4 {
   width: 100%;
   border-radius: 10px;
   padding-left: 20px;
+  margin-top: 10px;
+
+  &::placeholder {
+    opacity: 0.5;
+  }
+
+  &__error {
+    color: red;
+    font-size: 0.875rem;
+  }
+}
+
+.label {
+  font-weight: 600;
+  font-size: 0.875rem;
 }
 
 //Icons
@@ -177,4 +192,82 @@ h4 {
 
 .Dropdown-placeholder {
   display: none !important;
+}
+
+.rs-picker-daterange-panel {
+  color: #434343;
+}
+
+.rs-btn-link {
+  color: #468e49 !important;
+}
+
+.rs-calendar-table-cell-selected .rs-calendar-table-cell-content,
+.rs-btn-primary {
+  background-color: #468e49 !important;
+
+  &:hover {
+    color: #fff !important;
+  }
+}
+
+// Datepicker
+a,
+a:focus,
+a:hover {
+  text-decoration: none !important;
+  color: #1c4726 !important;
+}
+
+.rs-calendar-table-cell-is-today .rs-calendar-table-cell-content {
+  box-shadow: inset 0 0 0 1px #468e49 !important;
+}
+
+.rs-btn-primary.rs-btn-disabled,
+.rs-btn-primary:disabled {
+  background-color: #468e49 !important;
+}
+
+.rs-calendar-table-cell-content:hover {
+  background-color: #dae8db !important;
+  color: #434343 !important;
+}
+
+.rs-calendar-table-cell-in-range:before {
+  background-color: #dae8db !important;
+}
+
+.rs-calendar-header-title,
+.rs-calendar-header-title-date,
+.rs-btn,
+.rs-btn-subtle,
+.rs-btn-xs,
+.rs-picker-daterange-calendar-group,
+.rs-calendar-table-cell-day {
+  font-family: "Overpass" !important;
+}
+
+.rs-picker-default:not(.rs-picker-disabled) .rs-btn-active,
+.rs-picker-default:not(.rs-picker-disabled) .rs-btn:focus,
+.rs-picker-default:not(.rs-picker-disabled) .rs-btn:hover,
+.rs-picker-default:not(.rs-picker-disabled) .rs-picker-toggle-active,
+.rs-picker-default:not(.rs-picker-disabled) .rs-picker-toggle:focus,
+.rs-picker-default:not(.rs-picker-disabled) .rs-picker-toggle:hover {
+  border-color: #468e49 !important;
+}
+
+.rs-calendar {
+  font-family: "Overpass" !important;
+}
+
+.rs-picker-has-value .rs-btn .rs-picker-toggle-value,
+.rs-picker-has-value .rs-picker-toggle .rs-picker-toggle-value,
+.rs-picker-toggle-textbox {
+  color: #468e49 !important;
+  font-family: "Overpass" !important;
+}
+
+.rs-picker-daterange-header {
+  color: #434343 !important;
+  font-family: "Overpass" !important;
 }

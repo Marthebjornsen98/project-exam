@@ -1,29 +1,25 @@
 import Image from "next/image";
-import Logo from "../../public/assets/holidaze-logo.svg";
 import Link from "next/link";
-import { useRouter } from "next/router";
-import { Nav } from "./header.style";
 import { useState } from "react";
+import { useRouter } from "next/router";
 
-const Header = ({ id }) => {
+// Styles
+import { Nav } from "./header.style";
+
+// Logo
+import Logo from "../../public/assets/holidaze-logo.svg";
+
+const Header = () => {
   const Router = useRouter();
-  // if (id) {
-  //   const newId = id.toString();
-  //   const ifActive = () => {
-  //     if (Router.pathname === "/hotels") {
-  //       return "active";
-  //     } else if (Router.pathname === "/hotelDetails/" + newId) {
-  //       return "active";
-  //     } else {
-  //       return "inactive";
-  //     }
-  //   };
-  // }
+
+  const goToLogin = () => {
+    Router.push("/loginPage");
+  };
 
   return (
     <Nav>
       <a href="/">
-        <Image src={Logo} width={"138px"} height={"43px"} />
+        <Image src={Logo} width={138} height={43} />
       </a>
 
       <ul className="nav">
@@ -53,17 +49,13 @@ const Header = ({ id }) => {
           </Link>
         </li>
       </ul>
-      <Link href="/login">
-        <a
-          className={
-            Router.pathname === "/login"
-              ? "cta__grass hvr-grow"
-              : "cta__grass hvr-grow"
-          }
-        >
-          Log in
-        </a>
-      </Link>
+      <li>
+        <Link href="/loginPage">
+          <button className="cta__grass hvr-grow" onClick={goToLogin}>
+            Log in
+          </button>
+        </Link>
+      </li>
     </Nav>
   );
 };

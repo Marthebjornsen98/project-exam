@@ -1,8 +1,8 @@
 import Head from "next/head";
-import HeroSearch from "../components/hero/heroSerach";
-import HotelCard from "../components/hotelCards";
 import Header from "../components/header";
+import HeroSearch from "../components/hero/heroSerach";
 import Filter from "../components/filter";
+import HotelCard from "../components/hotelCards";
 import Footer from "../components/footer";
 
 export const getStaticProps = async () => {
@@ -20,10 +20,10 @@ const Hotels = ({ hotels }) => {
       <Head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <title>Holidaze</title>
+        <title>Hotels</title>
         <meta name="description" content="Welcome to Holidaze!" />
       </Head>
-      <Header />
+      <Header hotelSearch={hotels} />
       <main>
         <HeroSearch />
         <div className="hotel__wrapper">

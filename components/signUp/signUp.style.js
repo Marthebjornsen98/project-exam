@@ -21,6 +21,7 @@ export const SignUpWrapper = styled.div`
       display: flex;
       margin-top: 40px;
       width: 50%;
+      align-items: center;
     }
 
     &__input {
@@ -33,6 +34,8 @@ export const SignUpWrapper = styled.div`
 
     &__btn {
       border-radius: 0px 10px 10px 0px;
+      height: 60px;
+      margin-top: 10px;
     }
   }
 `;

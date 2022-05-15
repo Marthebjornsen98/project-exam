@@ -26,7 +26,6 @@ export const HotelCards = styled.div`
     &__location {
       font-size: 1rem;
       color: #a0a0a0;
-      margin: 5px;
     }
 
     &__star {
@@ -40,7 +39,7 @@ export const HotelCards = styled.div`
 
     &__price {
       color: #1c4726;
-      font-family: var(--secondary-font);
+      font-family: "Overpass";
       margin-top: 20px;
     }
 
@@ -61,8 +60,8 @@ export const HotelCards = styled.div`
     }
 
     &__details {
-      margin-bottom: 8px;
-      font-size: 1rem;
+      font-size: 0.875rem;
+      font-weight: 700;
     }
 
     &__cancellation {
