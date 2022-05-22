@@ -92,40 +92,6 @@ const Filter = () => {
             onChange={handleCheckbox}
           />
         </div>
-
-        {/* <div className="filter__border"></div>
-        <div className="filter__wrapper">
-          <div className="filter__wrap">
-            <Icon
-              icon="ep:arrow-down-bold"
-              color="#57b15b"
-              className="filter__icon"
-            />
-            <h4 className="filter__title bold">Neighbourhood</h4>
-          </div>
-        </div>
-        <div className="filter__border"></div>
-        <div className="filter__wrapper">
-          <div className="filter__wrap">
-            <Icon
-              icon="ep:arrow-down-bold"
-              color="#57b15b"
-              className="filter__icon"
-            />
-            <h4 className="filter__title bold">Facilities</h4>
-          </div>
-        </div>
-        <div className="filter__border"></div>
-        <div className="filter__wrapper">
-          <div className="filter__wrap">
-            <Icon
-              icon="ep:arrow-down-bold"
-              color="#57b15b"
-              className="filter__icon"
-            />
-            <h4 className="filter__title bold">Landmarks</h4>
-          </div>
-        </div> */}
       </div>
     </FilterWrapper>
   );

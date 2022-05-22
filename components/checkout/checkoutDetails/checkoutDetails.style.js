@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import media from "styled-media-query";
 
 export const CheckoutForm = styled.div`
   margin-top: 40px;
@@ -39,5 +40,13 @@ export const CheckoutForm = styled.div`
     &__privacy {
       font-size: 0.875rem;
     }
+
+    ${media.lessThan("768px")`
+      width: 100%;
+      
+      &__input {
+        width: 100%;
+      }
+    `}
   }
 `;

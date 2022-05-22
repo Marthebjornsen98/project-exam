@@ -69,12 +69,13 @@ export const LoginStyle = styled.div`
   `}
 
     ${media.lessThan("991px")`
-    flex-direction: column;
-    align-items: flex-start;
-
     &__form--side {
+      width: 100%;
+    }
+
+    &__form--wrapper {
       width: 90%;
-      height: auto;
+      margin: 0px auto;
     }
 
     &__title--wrapper {
@@ -82,13 +83,23 @@ export const LoginStyle = styled.div`
     }
 
     &__img--side {
-      width: 100%;
-      height: 40%;
+      width: 40%;
+      height: 100%;
+    }
+  `}
+
+  ${media.lessThan("768px")`
+  &__img--side {
+      display: none;
     }
   `}
   
 
   ${media.lessThan("425px")`
+
+    &__title {
+      font-size: 3rem;
+    }
 
     &__title--wrapper {
       margin-top: 100px;
@@ -109,4 +120,8 @@ export const LoginStyle = styled.div`
 
 export const LoginLogo = styled.div`
   margin-top: 20px;
+
+  ${media.lessThan("991px")`
+    margin-left: 30px;
+  `}
 `;

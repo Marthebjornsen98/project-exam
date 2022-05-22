@@ -1,15 +1,18 @@
 import styled from "styled-components";
+import media from "styled-media-query";
 
 export const CheckoutPage = styled.div`
   display: flex;
   justify-content: space-between;
-  display: flex;
-  justify-content: space-between;
+
+  ${media.lessThan("768px")`
+     flex-direction: column;
+  `}
 
   .checkout {
     padding: 30px;
     width: 40%;
-    height: 100vh;
+    height: 100%;
     background-color: #f1f1f1;
 
     &__orderSummary {
@@ -17,7 +20,7 @@ export const CheckoutPage = styled.div`
     }
 
     &__title {
-      margin: 50px 0px 20px;
+      margin: 40px 0px 20px;
     }
 
     &__img {
@@ -85,6 +88,52 @@ export const CheckoutPage = styled.div`
         font-weight: 700;
       }
     }
+
+    ${media.lessThan("1240px")`
+      &__orderSummary {
+        margin-left: 0px;
+      }
+    `}
+
+    ${media.lessThan("768px")`
+      width: 100%;
+
+      &__img--wrapper {
+        width: 40%;
+      }
+
+      &__closeBtn {
+      font-size: 2.25rem;
+    }
+
+      &__summary {
+        margin-top: 20px;
+
+        &--discountInput {
+          width: 100%;
+        }
+
+        &--border {
+        width: 100%;
+      }
+
+      &--total-wrapper {
+        width: 100%;
+      }
+      }
+    `}
+
+    ${media.lessThan("550px")`
+      &__img--wrapper {
+        width: 65%;
+      }
+    `}
+
+    ${media.lessThan("425px")`
+      &__img--wrapper {
+        width: 100%;
+      }
+    `}
   }
 
   .paymentDetails {
@@ -110,5 +159,19 @@ export const CheckoutPage = styled.div`
     &__subtext {
       margin-top: 10px;
     }
+
+    ${media.lessThan("1240px")`
+      &__wrapper {
+        width: 100%;
+      }
+    `}
+
+    ${media.lessThan("768px")`
+
+    width: 100%;
+      &__wrapper {
+        width: 100%;
+      }
+    `}
   }
 `;

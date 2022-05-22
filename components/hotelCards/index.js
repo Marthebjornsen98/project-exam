@@ -23,8 +23,8 @@ const HotelCard = ({
           className="hotelImg"
           loader={myLoader}
           src={hotels_image}
-          width={510}
-          height={380}
+          layout="fill"
+          objectFit="cover"
           href={"/hotelDetails/" + id}
           alt="This is a hotelroom with a nice bed and quality room."
         />

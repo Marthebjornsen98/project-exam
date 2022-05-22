@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import media from "styled-media-query";
 
 export const HotelDetailsWrapper = styled.div`
   display: flex;
@@ -6,15 +7,52 @@ export const HotelDetailsWrapper = styled.div`
   margin: 50px auto;
   justify-content: space-between;
 
+  ${media.lessThan("976px")`
+    flex-direction: column; 
+    margin-top: 20px;
+  `}
+
   .sliderImg {
     border-radius: 10px;
+  }
+
+  .hotelContent__information--wrapper {
+    width: 100%;
+  }
+
+  .hotelContent__id--page {
+    margin: 0px;
+    width: 100%;
+  }
+
+  .hotelContent__title--id-page {
+    font-size: 2rem;
+  }
+
+  .hotelContent__price--id-page {
+    margin-top: 30px;
+    font-size: 2rem;
+  }
+
+  .hotelContent__description {
+    width: 80%;
+    margin-top: 20px;
+  }
+
+  .hotelContent__details--wrapper {
+    margin-top: 40px;
+  }
+
+  .hotelContent__details--id-page {
+    margin-bottom: 15px;
+    font-size: 1rem;
   }
 
   .hotelIcons {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    margin-top: 50px;
+    margin-top: 30px;
 
     &__wrapper {
       display: flex;
@@ -29,38 +67,160 @@ export const HotelDetailsWrapper = styled.div`
     }
   }
 
-  .hotelContent__details--id-page {
-    margin-left: 30px;
+  .swiper-slide,
+  .swiper-slide-active,
+  .mySwiper {
+    max-width: 550px;
   }
 
-  .hotelContent__title--id-page {
-    font-size: 2rem;
+  ${media.lessThan("1185px")`
+    .swiper-slide, 
+    .swiper-slide-active,
+    .mySwiper {
+      max-width: 500px;
+    }
+
+    .hotelContent__price--id-page {
+      margin-top: 20px;
+      font-size: 1.875rem;
+    }
+
+    .hotelContent__description {
+      width: 80%;
+      margin-top: 10px;
+    }
+
+    .hotelContent__details--wrapper {
+      margin-top: 20px;
+    }
+
+    .hotelContent__details--id-page {
+      margin-bottom: 10px;
+    }
+  `}
+
+  ${media.lessThan("976px")`
+
+    .hotelCards__id-page {
+      margin: 0px !important;
+    }
+    
+    .hotelContent__information--wrapper {
+      width: 100%;
+      margin: 30px auto 0px auto;
+    }
+
+    .hotelContent__description {
+      width: 100%;
+    }
+
+    .hotelContent__id--page {
+      margin: 0px;
+    }
+
+    .swiper__wrapper {
+      max-width: 100%;
+    }
+
+    .swiper-slide,
+    .swiper-slide-active,
+    .mySwiper {
+      max-width: 100%;
+    }
+  `}
+
+  ${media.lessThan("385px")`
+    .hotelContent__details--wrapper {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .hotelContent__price--id-page {
+      margin-top: 30px;
+    }
+
+    .hotelContent__btn--wrapper {
+        width: 100%;
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hotelContent__btn {
+        padding: 12px 90px;
+    }
+  `}
+`;
+
+export const HotelIcons = styled.div`
+  .hotelIcons__id-page {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    margin: 0px auto;
   }
 
-  .hotelContent__id--page {
-    max-width: 700px;
+  .hotelIcons__section--id-page {
+    display: flex;
+    justify-content: space-between;
+    width: 42%;
   }
 
-  .details__id--page {
-    margin-top: 20px;
+  .hotelIcons__wrapper--id-page {
+    display: flex;
+    align-items: center;
+    font-weight: 600;
   }
 
-  .hotelContent__description {
-    width: 90%;
-    margin-top: 10px;
+  .hotelIcons__text--id-page {
+    margin-left: 10px;
+    font-size: 1.125rem;
   }
+
+  ${media.lessThan("976px")`
+    .hotelIcons__id-page {
+      width: 100%;
+    }
+  `}
+
+  ${media.lessThan("677px")`
+    .hotelIcons__id-page {
+      flex-direction: column;
+      align-items: flex-start;
+      margin-left: 20px;
+    }
+
+    .hotelIcons__wrapper--id-page {
+      width: 200px;
+      margin-bottom: 25px;
+    }
+
+    .hotelIcons__text--id-page {
+      margin-left: 20px;
+    }
+  `}
 `;
 
 export const HotelDetail__about = styled.div`
   width: 100%;
   margin: 220px auto 100px;
 
+  ${media.lessThan("1024px")`
+    margin: 100px auto 100px;
+  `}
+
+  ${media.lessThan("677px")`
+    margin: 50px auto 100px;
+  `}
+
   .detailAbout {
     display: flex;
     justify-content: space-between;
 
-    &__title {
+    &__text--wrapper {
       width: 48%;
+      margin-right: 30px;
     }
 
     &__map {
@@ -92,12 +252,44 @@ export const HotelDetail__about = styled.div`
         font-weight: 700;
       }
     }
+
+    ${media.lessThan("1024px")`
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+
+      &__text--wrapper {
+        width: 100%;
+        margin: 0px 0px 30px;
+      }
+
+      &__map--wrapper{
+        width: 64%;
+      }
+    `}
+
+    ${media.lessThan("677px")`
+    &__map--wrapper{
+        width: 86%;
+      }
+    `}
+  
+    ${media.lessThan("425px")`
+    &__map--wrapper{
+        width: 100%;
+      }
+    `}
   }
 `;
 
 export const Facilities = styled.div`
   width: 100%;
   margin: 100px auto;
+
+  ${media.lessThan("768px")`
+      text-align: center;
+      margin: 50px auto;
+    `}
 
   .facilities {
     display: flex;
@@ -113,6 +305,15 @@ export const Facilities = styled.div`
     &__icon--text {
       margin-left: 20px;
     }
+
+    ${media.lessThan("768px")`
+      flex-direction: column;
+      align-items: center;
+
+      &__icon--wrapper {
+        width: 220px;
+      }
+    `}
   }
 `;
 
@@ -150,6 +351,15 @@ export const GuestReview = styled.div`
       font-family: "Overpass";
       font-weight: 700;
     }
+
+    ${media.lessThan("768px")`
+      flex-direction: column;
+      align-items: center;
+
+      &__wrapper {
+      width: 100%;
+    }
+    `}
   }
 `;
 

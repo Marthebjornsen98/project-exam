@@ -1,0 +1,12 @@
+<svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<line x1="2.0625" y1="6.00098" x2="14.875" y2="6.00098" stroke="#57B15B" stroke-width="3" stroke-linecap="round"/>
+<line x1="2.0625" y1="6.00098" x2="14.875" y2="6.00098" stroke="black" stroke-opacity="0.2" stroke-width="3" stroke-linecap="round"/>
+<circle cx="19.25" cy="6.06348" r="4.25" fill="white"/>
+<circle cx="19.25" cy="6.06348" r="4.25" stroke="#57B15B" stroke-width="3"/>
+<circle cx="19.25" cy="6.06348" r="4.25" stroke="black" stroke-opacity="0.2" stroke-width="3"/>
+<line x1="1.5" y1="-1.5" x2="14.3125" y2="-1.5" transform="matrix(-1 8.74228e-08 8.74228e-08 1 25 19.001)" stroke="#57B15B" stroke-width="3" stroke-linecap="round"/>
+<line x1="1.5" y1="-1.5" x2="14.3125" y2="-1.5" transform="matrix(-1 8.74228e-08 8.74228e-08 1 25 19.001)" stroke="black" stroke-opacity="0.2" stroke-width="3" stroke-linecap="round"/>
+<circle r="4.25" transform="matrix(-1 0 0 1 6.3125 17.5635)" fill="white"/>
+<circle r="4.25" transform="matrix(-1 0 0 1 6.3125 17.5635)" stroke="#57B15B" stroke-width="3"/>
+<circle r="4.25" transform="matrix(-1 0 0 1 6.3125 17.5635)" stroke="black" stroke-opacity="0.2" stroke-width="3"/>
+</svg>

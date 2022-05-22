@@ -1,12 +1,10 @@
 import Head from "next/head";
 import Image from "next/image";
-import Link from "next/link";
 import axios from "axios";
 import { useRouter } from "next/router";
 import { useState } from "react";
 
 // Components
-import { Nav } from "../components/header/header.style";
 import { ContactWrapper } from "../styles/contact.style";
 import ContactModal from "../components/Modals/ContactModal";
 
@@ -29,13 +27,12 @@ const SignupSchema = Yup.object().shape({
     .required("Subject is required"),
   message: Yup.string()
     .min(3, "Message needs to be longer then 3 letters")
-    .max(50, "Your message is too long")
+    .max(500, "Your message is too long")
     .required("Message is required"),
   email: Yup.string().email("Invalid email").required("Email is required"),
 });
 
 const Contact = () => {
-  const Router = useRouter();
   const [error, setError] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
 
@@ -70,66 +67,25 @@ const Contact = () => {
       <ContactWrapper>
         <div className="contact">
           <div className="contact__img">
-            <Image src={contactImg} layout="fill" objectFit="cover" priority />
+            <Image
+              src={contactImg}
+              layout="fill"
+              className="contact__img--none"
+              objectFit="cover"
+              priority
+            />
+            <a href="/">
+              <Image src={Logo} width={138} height={43} />
+            </a>
+          </div>
+
+          <div className="logo__hidden">
             <a href="/">
               <Image src={Logo} width={138} height={43} />
             </a>
           </div>
 
           <div className="contact__right-side">
-            <div className="contact__header">
-              <Nav className="contact__nav">
-                <ul className="nav contact__nav--wrapper">
-                  <li className="nav__link">
-                    <Link href="/">
-                      <a
-                        className={
-                          Router.pathname === "/" ? "active" : "inactive"
-                        }
-                      >
-                        Home
-                      </a>
-                    </Link>
-                  </li>
-                  <li className="nav__link">
-                    <Link href="/hotels">
-                      <a
-                        className={
-                          Router.pathname === "/hotels" ? "active" : "inactive"
-                        }
-                      >
-                        Hotels
-                      </a>
-                    </Link>
-                  </li>
-                  <li className="nav__link">
-                    <Link href="/contact">
-                      <a
-                        className={
-                          Router.pathname === "/contact" ? "active" : "inactive"
-                        }
-                      >
-                        Contact
-                      </a>
-                    </Link>
-                  </li>
-                </ul>
-                <li>
-                  <Link href="/login">
-                    <a
-                      className={
-                        Router.pathname === "/loginPage"
-                          ? "cta__grass hvr-grow"
-                          : "cta__grass hvr-grow"
-                      }
-                    >
-                      Log in
-                    </a>
-                  </Link>
-                </li>
-              </Nav>
-            </div>
-
             <div className="contact__form">
               <div className="contact__title--wrapper">
                 <h1 className="contact__title">Get in touch</h1>

@@ -7,6 +7,11 @@ export const ContactWrapper = styled.div`
     align-items: center;
     justify-content: space-between;
 
+    ${media.lessThan("840px")`
+    flex-direction: column;
+    align-items: flex-start
+  `}
+
     &__img {
       position: relative;
       width: 40%;
@@ -14,17 +19,10 @@ export const ContactWrapper = styled.div`
       padding: 20px 0px 0px 50px;
     }
 
-    &__nav {
-      width: 100%;
-
-      &--wrapper {
-        width: 55%;
-      }
-    }
-
     &__right-side {
       width: 52%;
       margin-right: 50px;
+      padding-top: 50px;
       display: flex;
       height: 100vh;
       flex-direction: column;
@@ -74,6 +72,10 @@ export const ContactWrapper = styled.div`
       margin-top: 20px;
     }
 
+    .logo__hidden {
+      display: none;
+    }
+
     ${media.lessThan("1024px")`
     &__img {
       width: 25%;
@@ -86,15 +88,29 @@ export const ContactWrapper = styled.div`
     }
   `}
 
-    ${media.lessThan("768px")`
-
+    ${media.lessThan("840px")`
+    &__right-side {
+      width: 80%;
+      padding-top: 30px;
+      margin: 0px auto;
+    }
+    
     &__img {
       display: none;
     }
 
+    .logo__hidden {
+      display: flex;
+      margin: 30px 0px 0px 30px
+    }
+  `}
+
+  ${media.lessThan("375px")`
     &__right-side {
-      width: 100%;
-      margin: 0px 20px;
+      width: 90%;
+    }
+    &__title {
+      font-size: 2.5rem;
     }
   `}
   }

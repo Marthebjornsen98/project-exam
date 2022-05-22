@@ -4,6 +4,10 @@ import media from "styled-media-query";
 export const RecomandationWrapper = styled.div`
   margin: 100px auto;
 
+  ${media.lessThan("768px")`
+      margin: 50px auto;
+    `}
+
   .recomendation {
     display: flex;
     flex-wrap: wrap;

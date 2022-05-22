@@ -26,6 +26,7 @@ import swimmingpoolIcon from "../../public/assets/swimmingpool_icon.svg";
 //about section
 import {
   HotelDetail__about,
+  HotelIcons,
   Facilities,
   GuestReview,
   ProgressButton,
@@ -77,7 +78,6 @@ export const getStaticProps = async (context) => {
 
 const HotelDetails = ({
   hotelDetail: {
-    id,
     title,
     location,
     price,
@@ -142,11 +142,10 @@ const HotelDetails = ({
         />
         <title>{title}</title>
       </Head>
-      <Header id={id} />
-
+      <Header />
       <main>
         <HotelDetailsWrapper>
-          <div>
+          <div className="swiper__wrapper">
             <Swiper
               pagination={true}
               modules={[Pagination]}
@@ -155,7 +154,7 @@ const HotelDetails = ({
               <SwiperSlide>
                 <Image
                   src={slider_img1}
-                  width={610}
+                  width={550}
                   height={420}
                   loader={myLoader_1}
                   alt={slider_img_alt_1}
@@ -165,7 +164,7 @@ const HotelDetails = ({
               <SwiperSlide>
                 <Image
                   src={slider_img_2}
-                  width={610}
+                  width={550}
                   height={420}
                   loader={myLoader_2}
                   alt={slider_img_alt_2}
@@ -175,7 +174,7 @@ const HotelDetails = ({
               <SwiperSlide>
                 <Image
                   src={slider_img_3}
-                  width={610}
+                  width={550}
                   height={420}
                   loader={myLoader_3}
                   alt={slider_img_alt_3}
@@ -185,7 +184,7 @@ const HotelDetails = ({
               <SwiperSlide>
                 <Image
                   src={slider_img_4}
-                  width={610}
+                  width={550}
                   height={420}
                   loader={myLoader_4}
                   alt={slider_img_alt_4}
@@ -194,45 +193,45 @@ const HotelDetails = ({
               </SwiperSlide>
             </Swiper>
           </div>
-          <HotelCards>
-            <div className="hotelContent__details--id-page">
+          <HotelCards className="hotelCards__id-page">
+            <div className="hotelContent__information--wrapper">
               <div className="hotelContent hotelContent__id--page">
                 <h3 className="hotelContent__title hotelContent__title--id-page">
                   {title}
                 </h3>
                 <p className="hotelContent__location">{location}</p>
-                <h3 className="hotelContent__price">
+                <h3 className="hotelContent__price hotelContent__price--id-page">
                   ${price}/
                   <span className="hotelContent__price--span">per night</span>
                 </h3>
                 <p className="body-text hotelContent__description">
                   {description}
                 </p>
-                <div className="hotelContent__details--wrapper details__id--page">
-                  <div>
-                    <h4 className="hotelContent__details">
+                <div className="hotelContent__details--wrapper hotelContent__details--wrapper">
+                  <div className="hotelContent__details--container">
+                    <p className="hotelContent__details hotelContent__details--id-page">
                       {balcony ? "Balcony" : ""}
-                    </h4>
-                    <h4 className="hotelContent__details">
+                    </p>
+                    <p className="hotelContent__details hotelContent__details--id-page">
                       {free_wifi ? "Free Wifi" : ""}
-                    </h4>
-                    <h4 className="hotelContent__details">
+                    </p>
+                    <p className="hotelContent__details hotelContent__details--id-page">
                       {bed_size ? "Queen Size bed" : "King Size bed"}
-                    </h4>
-                    <h4 className="hotelContent__details">
+                    </p>
+                    <p className="hotelContent__details hotelContent__details--id-page">
                       {persons ? "Two Pers" : "Four Pers"}
-                    </h4>
-                    <h4 className="hotelContent__details">
+                    </p>
+                    <p className="hotelContent__details hotelContent__details--id-page">
                       {metro ? "Metro access" : ""}
-                    </h4>
+                    </p>
                   </div>
-                  <div>
+                  <div className="hotelContent__btn--wrapper">
                     <h4 className="hotelContent__cancellation">
                       Free cancellation
                     </h4>
                     <div>
                       <button
-                        className="cta__sage hvr-grow"
+                        className="cta__sage hvr-grow hotelContent__btn"
                         onClick={() => setIsCheckout(true)}
                       >
                         Reserve room
@@ -251,27 +250,39 @@ const HotelDetails = ({
                   </div>
                 </div>
               </div>
-              <div className="hotelIcons">
-                <div className="hotelIcons__wrapper">
-                  <Image src={personIcon} width={35} height={35} />
-                  <span className="hotelIcons__text">2 Pers</span>
-                </div>
-                <div className="hotelIcons__wrapper">
-                  <Image src={numberReviewIcon} width={35} height={35} />
-                  <span className="hotelIcons__text">Very Good</span>
-                </div>
-                <div className="hotelIcons__wrapper">
-                  <Image src={guestReviewIcon} width={35} height={35} />
-                  <span className="hotelIcons__text">Guest Review</span>
-                </div>
-                <div className="hotelIcons__wrapper">
-                  <Image src={nonSmokingIcon} width={35} height={35} />
-                  <span className="hotelIcons__text">Non-smoking</span>
-                </div>
-              </div>
             </div>
           </HotelCards>
         </HotelDetailsWrapper>
+
+        <HotelIcons>
+          <div className="hotelIcons hotelIcons__id-page">
+            <div className="hotelIcons__wrapper hotelIcons__wrapper--id-page">
+              <Image src={personIcon} width={35} height={35} />
+              <span className="hotelIcons__text hotelIcons__text--id-page">
+                2 Pers
+              </span>
+            </div>
+            <div className="hotelIcons__wrapper hotelIcons__wrapper--id-page">
+              <Image src={numberReviewIcon} width={35} height={35} />
+              <span className="hotelIcons__text hotelIcons__text--id-page">
+                Very Good
+              </span>
+            </div>
+
+            <div className="hotelIcons__wrapper hotelIcons__wrapper--id-page">
+              <Image src={guestReviewIcon} width={35} height={35} />
+              <span className="hotelIcons__text hotelIcons__text--id-page">
+                Guest Review
+              </span>
+            </div>
+            <div className="hotelIcons__wrapper hotelIcons__wrapper--id-page">
+              <Image src={nonSmokingIcon} width={35} height={35} />
+              <span className="hotelIcons__text hotelIcons__text--id-page">
+                Non-smoking
+              </span>
+            </div>
+          </div>
+        </HotelIcons>
 
         <div className="modal__chat">
           <div className="modal__chat--wrapper">
@@ -290,14 +301,14 @@ const HotelDetails = ({
 
         <HotelDetail__about>
           <div className="detailAbout">
-            <div className="detailAbout__title">
+            <div className="detailAbout__text--wrapper">
               <h3>{about_title}</h3>
               <p className="body-text detailAbout__text">{about}</p>
             </div>
-            <div>
+            <div className="detailAbout__map--wrapper">
               <Image
                 src={map}
-                width={600}
+                width={550}
                 height={300}
                 className="detailAbout__map"
                 alt={`Map over ${area}`}
@@ -316,7 +327,6 @@ const HotelDetails = ({
             </div>
           </div>
         </HotelDetail__about>
-
         <Facilities>
           <h3>Most popular facilities</h3>
           <div className="facilities">

@@ -1,8 +1,14 @@
 import styled from "styled-components";
+import media from "styled-media-query";
 
 export const FilterWrapper = styled.div`
   width: 250px;
   height: 100vh;
+
+  ${media.lessThan("768px")`
+      height: auto;
+      width: 100%;
+    `}
 
   .filter {
     &__title {
@@ -62,13 +68,14 @@ export const FilterWrapper = styled.div`
       }
     }
 
-    &__wrap {
-      display: flex;
-    }
-
-    &__icon {
-      font-size: 1.5rem;
-      margin-right: 10px;
-    }
+    ${media.lessThan("768px")`
+      &__icon {
+        font-size: 1.5rem;
+        margin-right: 10px;
+      }
+        &__border {
+          width: 100%;
+        }
+    `}
   }
 `;

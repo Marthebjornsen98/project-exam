@@ -87,7 +87,7 @@ export const HeroSearchWrapper = styled.div`
     ${media.lessThan("390px")`
       width: 300px;
       padding: 20px;
-      margin: 0px auto 90px;
+      margin: 0px auto 100px;
 
       &__container {
         margin-bottom: 20px;

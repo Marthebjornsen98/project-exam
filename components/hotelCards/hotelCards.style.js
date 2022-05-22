@@ -1,21 +1,18 @@
 import styled from "styled-components";
+import media from "styled-media-query";
 
 export const HotelCards = styled.div`
   display: flex;
   justify-content: space-between;
+  margin: 0px 0px 30px 30px;
 
-  .hotelImg__wrapper {
-    margin-right: 30px;
-    margin-bottom: 100px;
-  }
-
-  .hotelImg {
-    border-radius: 0.6rem;
-    cursor: pointer;
-  }
+  ${media.lessThan("1024px")`
+      flex-direction: column;
+    `}
 
   .hotelContent {
-    max-width: 620px;
+    width: 70%;
+    margin-left: 30px;
 
     &__title:hover {
       cursor: pointer;
@@ -30,7 +27,7 @@ export const HotelCards = styled.div`
 
     &__star {
       display: flex;
-      margin-top: 10px;
+      margin-top: 5px;
 
       &--wrapper {
         margin-right: 6px;
@@ -40,7 +37,7 @@ export const HotelCards = styled.div`
     &__price {
       color: #1c4726;
       font-family: "Overpass";
-      margin-top: 20px;
+      margin-top: 10px;
     }
 
     &__price--span {
@@ -49,7 +46,7 @@ export const HotelCards = styled.div`
     }
 
     &__description {
-      width: 90%;
+      width: 95%;
     }
 
     &__details--wrapper {
@@ -62,6 +59,7 @@ export const HotelCards = styled.div`
     &__details {
       font-size: 0.875rem;
       font-weight: 700;
+      margin-bottom: 3px;
     }
 
     &__cancellation {
@@ -70,5 +68,32 @@ export const HotelCards = styled.div`
       margin-bottom: 10px;
       font-size: 1rem;
     }
+
+    ${media.lessThan("1024px")`
+      width: 100%;
+      margin: 0px 0px 50px 0px;
+    `}
+  }
+
+  .hotelImg__wrapper {
+    margin-right: 0px 30px 100px;
+    position: relative;
+    width: 510px;
+    height: 380px;
+
+    ${media.lessThan("1024px")`
+      width: 100%;
+      margin: 0px 0px 10px;
+    `}
+
+    ${media.lessThan("768px")`
+      width: 100%;
+      height: 300px;
+    `}
+  }
+
+  .hotelImg {
+    border-radius: 0.6rem;
+    cursor: pointer;
   }
 `;

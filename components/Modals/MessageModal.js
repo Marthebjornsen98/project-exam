@@ -15,7 +15,7 @@ const SignupSchema = Yup.object().shape({
     .required("Subject is required"),
   message: Yup.string()
     .min(3, "Message needs to be longer then 3 letters")
-    .max(50, "Your message is too long")
+    .max(500, "Your message is too long")
     .required("Message is required"),
   email: Yup.string().email("Invalid email").required("Email is required"),
 });
