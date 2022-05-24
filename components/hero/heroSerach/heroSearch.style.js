@@ -7,12 +7,32 @@ export const HeroSearchWrapper = styled.div`
   min-width: 300px;
   margin: 0px auto 40px;
 
+  ${media.lessThan("768px")`
+      display: flex;
+     justify-content: center;
+     margin-bottom: 150px;
+  `}
+
   .heroSearch {
     display: flex;
     padding: 30px;
     border-radius: 10px;
     background-color: #fff;
     justify-content: space-between;
+
+    &__input {
+      height: 45px;
+      width: 250px;
+    }
+
+    &__search--value {
+      padding: 8px 15px;
+      border-radius: 8px;
+    }
+
+    &__search--value:hover {
+      background-color: #dae8db;
+    }
 
     &__container {
       display: flex;
@@ -57,20 +77,6 @@ export const HeroSearchWrapper = styled.div`
     }
 
     ${media.lessThan("1054px")`
-      width: 300px;
-      padding: 30px;
-      flex-direction: column;
-
-      &__container {
-        margin-bottom: 30px;
-      }
-
-      &__button {
-        padding: 8px 15px;
-      }
-    `}
-
-    ${media.lessThan("1054px")`
       width: 350px;
       padding: 30px;
       flex-direction: column;
@@ -87,7 +93,6 @@ export const HeroSearchWrapper = styled.div`
     ${media.lessThan("390px")`
       width: 300px;
       padding: 20px;
-      margin: 0px auto 100px;
 
       &__container {
         margin-bottom: 20px;
@@ -97,5 +102,13 @@ export const HeroSearchWrapper = styled.div`
         padding: 6px 15px;
       }
     `}
+  }
+
+  .heroSearch_search--input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    background-color: red;
   }
 `;

@@ -2,11 +2,11 @@ import Head from "next/head";
 
 // Components
 import Hero from "../components/hero";
-import Footer from "../components/footer";
 import Recomandations from "../components/recomendations";
 import Collage from "../components/imgCollage";
 import CostumerReviewContainer from "../components/costumerReview";
 import SignUp from "../components/signUp";
+import Footer from "../components/footer";
 
 export default function Home() {
   return (

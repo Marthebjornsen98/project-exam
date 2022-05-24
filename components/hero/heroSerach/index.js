@@ -1,5 +1,7 @@
 import { Icon } from "@iconify/react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import Select from "react-select";
+import Hotels from "../../../pages/hotels";
 
 // Styles
 import { HeroSearchWrapper } from "./heroSearch.style";
@@ -18,8 +20,9 @@ const options = [
   { label: "6", id: 6 },
 ];
 
-const HeroSearch = () => {
+const HeroSearch = ({ hotelSearch }) => {
   const [isShowing, setIsShowing] = useState(false);
+  const [isInputShowing, setIsInputShowing] = useState(false);
   const [guestValue, setGuestValue] = useState();
   const [roomValue, setRoomValue] = useState();
 
@@ -27,24 +30,37 @@ const HeroSearch = () => {
     setGuestValue(e.target.guestValue);
   };
 
-  const handleChangeRooms = (e) => {
-    setRoomValue(e.target.roomValue);
+  const handleChangeRooms = (api) => {
+    setRoomValue(api.target.roomValue);
   };
+
+  const [searchText, setSearchText] = useState("");
 
   return (
     <HeroSearchWrapper>
       <div className="heroSearch">
         <div className="heroSearch__container">
-          <span className="heroSearch__supportingText">Location</span>
-          <form>
-            <label className="heroSearch__inputName">
-              Where are you going?
-            </label>
+          <span className="heroSearch__supportinghotel">Location</span>
+          <form onSubmit={submitAction}>
+            {isInputShowing ? (
+              <input
+                onChange={(e) => {
+                  setSearchText(e.target.value);
+                }}
+              />
+            ) : (
+              <label
+                className="heroSearch__inputName"
+                onClick={() => setIsInputShowing(true)}
+              >
+                Where are you going?
+              </label>
+            )}
           </form>
         </div>
 
         <div className="heroSearch__container">
-          <span className="heroSearch__supportingText">Travelers</span>
+          <span className="heroSearch__supportinghotel">Travelers</span>
           <form>
             <select
               value={guestValue}
@@ -64,7 +80,7 @@ const HeroSearch = () => {
         </div>
 
         <div className="heroSearch__container">
-          <span className="heroSearch__supportingText">Add date</span>
+          <span className="heroSearch__supportinghotel">Add date</span>
           <form>
             {isShowing ? (
               <DateRangePicker
@@ -84,7 +100,7 @@ const HeroSearch = () => {
         </div>
 
         <div className="heroSearch__container">
-          <span className="heroSearch__supportingText">Rooms</span>
+          <span className="heroSearch__supportinghotel">Rooms</span>
           <form>
             <select
               value={roomValue}
@@ -103,10 +119,25 @@ const HeroSearch = () => {
           </form>
         </div>
 
-        <button className="heroSearch__button">
+        <button className="heroSearch__button" type="submit">
           <Icon icon="charm:search" className="heroSearch__button--icon" />
         </button>
       </div>
+      <div>{area}</div>
+      {/* <div className="heroSerach_search--input">
+        {suggestions &&
+          suggestions.map((suggestion, i) => {
+            return (
+              <p
+                className="heroSearch__search--value"
+                key={i}
+                onClick={() => onSuggestHandler(suggestions.title)}
+              >
+                {suggestion.title}
+              </p>
+            );
+          })}
+      </div> */}
     </HeroSearchWrapper>
   );
 };

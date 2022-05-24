@@ -17,7 +17,7 @@ export const RecomandationWrapper = styled.div`
     &__wrapper {
       width: 32%;
       max-width: 660px;
-      min-width: 320px;
+      min-width: 300px;
     }
 
     &__icon--wrapper {

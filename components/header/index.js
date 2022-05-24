@@ -83,11 +83,11 @@ const Header = () => {
               </Link>
             </li>
           </ul>
-          <Link href="/">
+          <a href="/">
             <button className="cta__grass hvr-grow login__btn" onClick={logout}>
               Log out
             </button>
-          </Link>
+          </a>
 
           <div className="bottomNavigation">
             <ul className="nav bottomNavigation__navbar">
@@ -100,6 +100,7 @@ const Header = () => {
                   </a>
                 </Link>
               </li>
+
               <li className="nav__link">
                 <Link href="/hotels">
                   <a
@@ -111,6 +112,7 @@ const Header = () => {
                   </a>
                 </Link>
               </li>
+
               <li className="nav__link">
                 <Link href="/contact">
                   <a
@@ -122,6 +124,7 @@ const Header = () => {
                   </a>
                 </Link>
               </li>
+
               <li className="nav__link">
                 <Link href="/admin">
                   <a
@@ -156,6 +159,7 @@ const Header = () => {
                 </a>
               </Link>
             </li>
+
             <li className="nav__link">
               <Link href="/hotels">
                 <a
@@ -167,6 +171,7 @@ const Header = () => {
                 </a>
               </Link>
             </li>
+
             <li className="nav__link">
               <Link href="/contact">
                 <a
@@ -179,14 +184,14 @@ const Header = () => {
               </Link>
             </li>
           </ul>
-          <Link href="/loginPage">
+          <a href="/loginPage">
             <button
               className="cta__grass hvr-grow login__btn"
               onClick={goToLogin}
             >
               Log in
             </button>
-          </Link>
+          </a>
 
           <div className="bottomNavigation">
             <ul className="nav bottomNavigation__navbar">

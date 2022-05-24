@@ -30,33 +30,33 @@ export const Nav = styled.div`
     display: none;
   }
 
-  ${media.lessThan("590px")`
+  ${media.lessThan("719px")`
   .topNavigation {
       display: none;
     }
 
     .login__btn {
-      padding: 10px 30px;
+      padding: 8px 20px;
     }
 
     .logo {
       padding-left: 10px;
     }
 
-  .bottomNavigation {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    display: flex;
-    background-color: #fff;
-    height: 80px;
-    justify-content: center;
-    align-items: center;
-    z-index: 99;
-    box-shadow: 1px -9px 10px 7px rgba(0,0,0,0.07);
-    -webkit-box-shadow: 1px -9px 10px 7px rgba(0,0,0,0.07);
-    -moz-box-shadow: 1px -9px 10px 7px rgba(0,0,0,0.07);
+    .bottomNavigation {
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      display: flex;
+      background-color: #fff;
+      height: 80px;
+      justify-content: center;
+      align-items: center;
+      z-index: 99;
+      box-shadow: 1px -9px 10px 7px rgba(0,0,0,0.07);
+      -webkit-box-shadow: 1px -9px 10px 7px rgba(0,0,0,0.07);
+      -moz-box-shadow: 1px -9px 10px 7px rgba(0,0,0,0.07);
 
     &__navbar {
       width: 80%;

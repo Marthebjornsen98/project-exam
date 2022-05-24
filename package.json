@@ -29,6 +29,7 @@
     "react": "18.0.0",
     "react-alice-carousel": "^2.5.1",
     "react-animated-modal": "^1.1.1",
+    "react-autocomplete": "^1.8.1",
     "react-date-picker": "^8.4.0",
     "react-date-range": "^1.4.0",
     "react-dom": "18.0.0",
