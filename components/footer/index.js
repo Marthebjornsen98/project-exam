@@ -8,18 +8,18 @@ const Footer = () => {
     <FooterContainer>
       <div className="footer">
         <div className="footer__top--wrapper">
-          <Image src={Logo} width={138} height={43} alt={"Holidaze logo"} />
+          <Image src={Logo} width={138} height={43} alt="Holidaze logo" />
           <ul className="footer__links--wrapper">
-            <Link href="/">
+            <Link href="#" passHref>
               <li className="footer__links">Review</li>
             </Link>
-            <Link href="/">
+            <Link href="#" passHref>
               <li className="footer__links">Tips</li>
             </Link>
-            <Link href="/">
+            <Link href="#" passHref>
               <li className="footer__links">Blog</li>
             </Link>
-            <Link href="/">
+            <Link href="#" passHref>
               <li className="footer__links">Q&A</li>
             </Link>
           </ul>

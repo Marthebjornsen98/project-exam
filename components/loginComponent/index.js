@@ -77,7 +77,6 @@ const LoginComponent = () => {
                 ""
               )}
             </div>
-
             <div className="login__btn--wrapper">
               <button className="cta__sage hvr-grow login__btn">Log in</button>
             </div>

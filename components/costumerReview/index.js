@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { CostumerReview } from "./costumerReview.style";
+import Image from "next/image";
 
 // Iconify
 import { Icon } from "@iconify/react";
@@ -48,7 +49,7 @@ const CostumerReviewContainer = () => {
           return (
             <div className="costumerReview__card" key={id}>
               <div className="costumerReview__top--wrapper">
-                <img src={image} alt={Name} className="costumerReview__img" />
+                <Image src={image} alt={Name} className="costumerReview__img" />
                 <div>
                   <h4 className="bold costumerReview__name">{Name}</h4>
                   <p className="costumerReview__country">{country}</p>

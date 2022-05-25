@@ -63,7 +63,7 @@ const Recomandations = () => {
                         src={personIcon}
                         width={32}
                         height={32}
-                        alt="Bed icon"
+                        alt="Person icon"
                       />
                       <p className="body-text semi-bold recomendation__icon--text">
                         2 Pers
@@ -75,7 +75,7 @@ const Recomandations = () => {
                         src={pinIcon}
                         width={32}
                         height={32}
-                        alt="Bed icon"
+                        alt="Pin icon"
                       />
                       <p className="body-text semi-bold recomendation__icon--text">
                         Bodø
@@ -87,7 +87,7 @@ const Recomandations = () => {
                     <p className="body-text recomendation__text">
                       {description}
                     </p>
-                    <Link href={"/hotelDetails/" + id}>
+                    <Link href={"/hotelDetails/" + id} passHref>
                       <a className="recomendation__btn--wrapper">
                         <button className="cta__sage recomendation__btn">
                           Book room

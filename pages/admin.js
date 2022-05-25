@@ -2,6 +2,7 @@ import nookies, { parseCookies } from "nookies";
 import axios from "axios";
 import Head from "next/head";
 import Image from "next/image";
+import Link from "next/link";
 import { useRouter } from "next/router";
 import { useState } from "react";
 import { BaseUrl } from "../libs/baseUrl";
@@ -61,7 +62,7 @@ const Admin = ({ holidazes, messages, enquiries, jwt }) => {
     <>
       <Head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
         <meta
           name="description"
           content="Here you can add, edit and delete hotels. We hope you find the room you are looking for. Dont hesitate to contact us if you have any questions."
@@ -71,14 +72,14 @@ const Admin = ({ holidazes, messages, enquiries, jwt }) => {
 
       <AdminPage>
         <div className="adminPage__header">
-          <a href="/">
+          <Link href="/">
             <Image
               src={logo}
               width={138}
               height={43}
               alt="Holidaze logo in green"
             />
-          </a>
+          </Link>
           <button className="cta__grass hvr-grow" onClick={logout}>
             Log out
           </button>

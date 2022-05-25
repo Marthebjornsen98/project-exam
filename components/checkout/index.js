@@ -1,5 +1,6 @@
 import { Icon } from "@iconify/react";
 import Image from "next/image";
+import Link from "next/link";
 import Logo from "../../public/assets/holidaze-logo.svg";
 
 // Components
@@ -26,9 +27,14 @@ const Checkout = ({
         <div className="modal__content checkoutModal__content">
           <CheckoutPage>
             <div className="checkout">
-              <a href="/">
-                <Image src={Logo} width={138} height={43} />
-              </a>
+              <Link href="/">
+                <Image
+                  src={Logo}
+                  width={138}
+                  height={43}
+                  alt="Holidaze logo in green"
+                />
+              </Link>
               <div className="checkout__orderSummary">
                 <h4 className="checkout__title">Order summary</h4>
                 <div className="checkout__img--wrapper">

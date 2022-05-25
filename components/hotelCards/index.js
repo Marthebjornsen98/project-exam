@@ -30,7 +30,7 @@ const HotelCard = ({
         />
       </div>
       <div className="hotelContent">
-        <Link href={"/hotelDetails/" + id}>
+        <Link href={"/hotelDetails/" + id} passHref>
           <h3 className="hotelContent__title">{title}</h3>
         </Link>
         <p className="hotelContent__location">{location}</p>
@@ -75,7 +75,7 @@ const HotelCard = ({
           <div>
             <h4 className="hotelContent__cancellation">Free cancellation</h4>
             <Link href={"/hotelDetails/" + id}>
-              <a className="cta__sage hvr-grow">Book room</a>
+              <button className="cta__sage hvr-grow">Book room</button>
             </Link>
           </div>
         </div>

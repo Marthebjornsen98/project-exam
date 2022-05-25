@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Image from "next/image";
 import axios from "axios";
-import { useRouter } from "next/router";
+import Link from "next/link";
 import { useState } from "react";
 
 // Components
@@ -56,7 +56,7 @@ const Contact = () => {
     <>
       <Head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
         <title>Contact us</title>
         <meta
           name="description"
@@ -69,20 +69,31 @@ const Contact = () => {
           <div className="contact__img">
             <Image
               src={contactImg}
+              alt="Image of prople hiking in mountains"
               layout="fill"
               className="contact__img--none"
               objectFit="cover"
               priority
             />
-            <a href="/">
-              <Image src={Logo} width={138} height={43} />
-            </a>
+            <Link href="/">
+              <Image
+                src={Logo}
+                width={138}
+                height={43}
+                alt="Holidaze green logo"
+              />
+            </Link>
           </div>
 
           <div className="logo__hidden">
-            <a href="/">
-              <Image src={Logo} width={138} height={43} />
-            </a>
+            <Link href="/">
+              <Image
+                src={Logo}
+                width={138}
+                height={43}
+                alt="Holidaze green logo"
+              />
+            </Link>
           </div>
 
           <div className="contact__right-side">
@@ -187,4 +198,3 @@ const Contact = () => {
 };
 
 export default Contact;
-// onClick={() => setIsOpen(true)}

@@ -123,21 +123,6 @@ const HeroSearch = ({ hotelSearch }) => {
           <Icon icon="charm:search" className="heroSearch__button--icon" />
         </button>
       </div>
-      <div>{area}</div>
-      {/* <div className="heroSerach_search--input">
-        {suggestions &&
-          suggestions.map((suggestion, i) => {
-            return (
-              <p
-                className="heroSearch__search--value"
-                key={i}
-                onClick={() => onSuggestHandler(suggestions.title)}
-              >
-                {suggestion.title}
-              </p>
-            );
-          })}
-      </div> */}
     </HeroSearchWrapper>
   );
 };

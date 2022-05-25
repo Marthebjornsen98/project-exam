@@ -17,9 +17,9 @@ const Enquiries = ({ enquiries }) => {
       return (
         <p className="body-text holidazes__message">
           {content}
-          <a onClick={showLess} className="holidazes__readMore-readLess">
+          <p onClick={showLess} className="holidazes__readMore-readLess">
             Read less
-          </a>
+          </p>
         </p>
       );
     }
@@ -27,9 +27,9 @@ const Enquiries = ({ enquiries }) => {
     return (
       <p className="body-text holidazes__message">
         {toShow}
-        <a onClick={showMore} className="holidazes__readMore-readLess">
+        <p onClick={showMore} className="holidazes__readMore-readLess">
           Read more
-        </a>
+        </p>
       </p>
     );
   };

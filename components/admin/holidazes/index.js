@@ -25,9 +25,9 @@ const Holidazes = ({ holidazes, jwt }) => {
       return (
         <p className="body-text holidazes__description">
           {content}
-          <a onClick={showLess} className="holidazes__readMore-readLess">
+          <p onClick={showLess} className="holidazes__readMore-readLess">
             Read less
-          </a>
+          </p>
         </p>
       );
     }
@@ -35,9 +35,9 @@ const Holidazes = ({ holidazes, jwt }) => {
     return (
       <p className="body-text holidazes__description">
         {toShow}
-        <a onClick={showMore} className="holidazes__readMore-readLess">
+        <p onClick={showMore} className="holidazes__readMore-readLess">
           Read more
-        </a>
+        </p>
       </p>
     );
   };
@@ -91,6 +91,7 @@ const Holidazes = ({ holidazes, jwt }) => {
                         loader={myLoader}
                         width={150}
                         height={100}
+                        alt="Image of the hotel interior"
                         className="holidazes__images"
                       />
                     </div>

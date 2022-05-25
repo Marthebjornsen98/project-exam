@@ -135,7 +135,7 @@ const HotelDetails = ({
     <div>
       <Head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
         <meta
           name="description"
           content={`Welcome to Holidaze! This is ${title}, we hope you find the room you are looking for. Dont hesitate to contact us if you have any questions.`}
@@ -257,26 +257,46 @@ const HotelDetails = ({
         <HotelIcons>
           <div className="hotelIcons hotelIcons__id-page">
             <div className="hotelIcons__wrapper hotelIcons__wrapper--id-page">
-              <Image src={personIcon} width={35} height={35} />
+              <Image
+                src={personIcon}
+                width={35}
+                height={35}
+                alt="Person icon"
+              />
               <span className="hotelIcons__text hotelIcons__text--id-page">
                 2 Pers
               </span>
             </div>
             <div className="hotelIcons__wrapper hotelIcons__wrapper--id-page">
-              <Image src={numberReviewIcon} width={35} height={35} />
+              <Image
+                src={numberReviewIcon}
+                width={35}
+                height={35}
+                alt="Review icon"
+              />
               <span className="hotelIcons__text hotelIcons__text--id-page">
                 Very Good
               </span>
             </div>
 
             <div className="hotelIcons__wrapper hotelIcons__wrapper--id-page">
-              <Image src={guestReviewIcon} width={35} height={35} />
+              <Image
+                src={guestReviewIcon}
+                width={35}
+                height={35}
+                alt="Guest review icon"
+              />
               <span className="hotelIcons__text hotelIcons__text--id-page">
                 Guest Review
               </span>
             </div>
             <div className="hotelIcons__wrapper hotelIcons__wrapper--id-page">
-              <Image src={nonSmokingIcon} width={35} height={35} />
+              <Image
+                src={nonSmokingIcon}
+                width={35}
+                height={35}
+                alt="Non smoking icon"
+              />
               <span className="hotelIcons__text hotelIcons__text--id-page">
                 Non-smoking
               </span>
@@ -311,18 +331,17 @@ const HotelDetails = ({
                 width={550}
                 height={300}
                 className="detailAbout__map"
-                alt={`Map over ${area}`}
+                alt="Map over hotel area"
                 loader={myLoader_map}
               />
               <div className="detailAbout__map--details">
                 <p className="detailAbout__adress">{adress}</p>
-                <a
-                  target="_blank"
+                <Link
                   href="https://www.google.com/maps"
                   className="detailAbout__map--text"
                 >
                   View map
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -332,19 +351,34 @@ const HotelDetails = ({
           <div className="facilities">
             <div className="facilities__wrapper">
               <div className="facilities__icon--wrapper">
-                <Image src={swimmingpoolIcon} width={40} height={40} />
+                <Image
+                  src={swimmingpoolIcon}
+                  alt="Swimming pool icon"
+                  width={40}
+                  height={40}
+                />
                 <p className="facilities__icon--text">
                   {swimming_pool ? "Swimming Pool" : "No swimming pool"}
                 </p>
               </div>
               <div className="facilities__icon--wrapper">
-                <Image src={nonSmokingIcon} width={40} height={40} />
+                <Image
+                  src={nonSmokingIcon}
+                  width={40}
+                  height={40}
+                  alt="Non smoking icon"
+                />
                 <p className="facilities__icon--text">
                   {nonSmoking_rooms ? "Non-smoking rooms" : "Smoking rooms"}
                 </p>
               </div>
               <div className="facilities__icon--wrapper">
-                <Image src={fitnessIcon} width={40} height={40} />
+                <Image
+                  src={fitnessIcon}
+                  width={40}
+                  height={40}
+                  alt="Gym icon"
+                />
                 <p className="facilities__icon--text">
                   {gym ? "Fitness center" : "No fitness centre"}
                 </p>
@@ -353,19 +387,34 @@ const HotelDetails = ({
 
             <div className="facilities__wrapper">
               <div className="facilities__icon--wrapper">
-                <Image src={roomServiceIcon} width={40} height={40} />
+                <Image
+                  src={roomServiceIcon}
+                  width={40}
+                  height={40}
+                  alt="Room service icon"
+                />
                 <p className="facilities__icon--text">
                   {room_service ? "Room service" : "No room service"}
                 </p>
               </div>
               <div className="facilities__icon--wrapper">
-                <Image src={parkingIcon} width={40} height={40} />
+                <Image
+                  src={parkingIcon}
+                  width={40}
+                  height={40}
+                  alt="Parking icon"
+                />
                 <p className="facilities__icon--text">
                   {private_parking ? "Private parking" : "No private parking"}
                 </p>
               </div>
               <div className="facilities__icon--wrapper">
-                <Image src={restaurantIcon} width={40} height={40} />
+                <Image
+                  src={restaurantIcon}
+                  width={40}
+                  height={40}
+                  alt="Restaurant icon"
+                />
                 <p className="facilities__icon--text">
                   {restaurant ? "Restaurant" : "No hotel restaurant"}
                 </p>
@@ -374,19 +423,29 @@ const HotelDetails = ({
 
             <div className="facilities__wrapper">
               <div className="facilities__icon--wrapper">
-                <Image src={teaCoffeeIcon} width={40} height={40} />
+                <Image
+                  src={teaCoffeeIcon}
+                  width={40}
+                  height={40}
+                  alt="Tea/coffee icon"
+                />
                 <p className="facilities__icon--text">
                   {teaCoffee_maker ? "Tea/coffee maker" : "No tea/coffee maker"}
                 </p>
               </div>
               <div className="facilities__icon--wrapper">
-                <Image src={barIcon} width={40} height={40} />
+                <Image src={barIcon} width={40} height={40} alt="Bar icon" />
                 <p className="facilities__icon--text">
                   {bar ? "Bar" : "No hotel bar"}
                 </p>
               </div>
               <div className="facilities__icon--wrapper">
-                <Image src={breakfastIcon} width={40} height={40} />
+                <Image
+                  src={breakfastIcon}
+                  width={40}
+                  height={40}
+                  alt="Breakfast icon"
+                />
                 <p className="facilities__icon--text">
                   {breakfast
                     ? "Very good breakfast"

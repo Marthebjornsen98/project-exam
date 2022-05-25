@@ -20,8 +20,9 @@ const SignupSchema = Yup.object().shape({
   email: Yup.string().email("Invalid email").required("Email is required"),
 });
 
-const modal = ({ setIsOpen }) => {
+const MessageModal = ({ setIsOpen }) => {
   const [error, setError] = useState(false);
+
   const handleSubmit = async (values) => {
     console.log(values);
     try {
@@ -143,4 +144,4 @@ const modal = ({ setIsOpen }) => {
   );
 };
 
-export default modal;
+export default MessageModal;

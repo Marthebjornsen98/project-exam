@@ -28,7 +28,7 @@ const Header = () => {
     <>
       {cookies ? (
         <Nav>
-          <a href="/">
+          <Link href="/">
             <Image
               src={Logo}
               className="logo"
@@ -36,63 +36,61 @@ const Header = () => {
               height={40}
               alt="Holidaze green logo"
             />
-          </a>
+          </Link>
 
           <ul className="nav topNavigation">
             <li className="nav__link">
-              <Link href="/">
-                <a className={Router.pathname === "/" ? "active" : "inactive"}>
-                  Home
-                </a>
+              <Link
+                href="/"
+                className={Router.pathname === "/" ? "active" : "inactive"}
+              >
+                <a>Home</a>
               </Link>
             </li>
 
             <li className="nav__link">
-              <Link href="/hotels">
-                <a
-                  className={
-                    Router.pathname === "/hotels" ? "active" : "inactive"
-                  }
-                >
-                  Hotels
-                </a>
+              <Link
+                href="/hotels"
+                className={
+                  Router.pathname === "/hotels" ? "active" : "inactive"
+                }
+              >
+                <a>Hotels</a>
               </Link>
             </li>
 
             <li className="nav__link">
-              <Link href="/contact">
-                <a
-                  className={
-                    Router.pathname === "/contact" ? "active" : "inactive"
-                  }
-                >
-                  Contact
-                </a>
+              <Link
+                href="/contact"
+                className={
+                  Router.pathname === "/contact" ? "active" : "inactive"
+                }
+              >
+                <a>Contact</a>
               </Link>
             </li>
 
             <li className="nav__link">
-              <Link href="/admin">
-                <a
-                  className={
-                    Router.pathname === "/hotels" ? "active" : "inactive"
-                  }
-                >
-                  Admin
-                </a>
+              <Link
+                href="/admin"
+                className={
+                  Router.pathname === "/hotels" ? "active" : "inactive"
+                }
+              >
+                <a>Admin</a>
               </Link>
             </li>
           </ul>
-          <a href="/">
+          <Link href="/">
             <button className="cta__grass hvr-grow login__btn" onClick={logout}>
               Log out
             </button>
-          </a>
+          </Link>
 
           <div className="bottomNavigation">
             <ul className="nav bottomNavigation__navbar">
               <li className="nav__link">
-                <Link href="/">
+                <Link href="/" passHref>
                   <a
                     className={Router.pathname === "/" ? "active" : "inactive"}
                   >
@@ -102,7 +100,7 @@ const Header = () => {
               </li>
 
               <li className="nav__link">
-                <Link href="/hotels">
+                <Link href="/hotels" passHref>
                   <a
                     className={
                       Router.pathname === "/hotels" ? "active" : "inactive"
@@ -114,7 +112,7 @@ const Header = () => {
               </li>
 
               <li className="nav__link">
-                <Link href="/contact">
+                <Link href="/contact" passHref>
                   <a
                     className={
                       Router.pathname === "/contact" ? "active" : "inactive"
@@ -126,7 +124,7 @@ const Header = () => {
               </li>
 
               <li className="nav__link">
-                <Link href="/admin">
+                <Link href="/admin" passHref>
                   <a
                     className={
                       Router.pathname === "/hotels" ? "active" : "inactive"
@@ -141,7 +139,7 @@ const Header = () => {
         </Nav>
       ) : (
         <Nav>
-          <a href="/">
+          <Link href="/">
             <Image
               src={Logo}
               className="logo"
@@ -149,11 +147,11 @@ const Header = () => {
               height={40}
               alt="Holidaze green logo"
             />
-          </a>
+          </Link>
 
           <ul className="nav topNavigation">
             <li className="nav__link">
-              <Link href="/">
+              <Link href="/" passHref>
                 <a className={Router.pathname === "/" ? "active" : "inactive"}>
                   Home
                 </a>
@@ -161,7 +159,7 @@ const Header = () => {
             </li>
 
             <li className="nav__link">
-              <Link href="/hotels">
+              <Link href="/hotels" passHref>
                 <a
                   className={
                     Router.pathname === "/hotels" ? "active" : "inactive"
@@ -173,7 +171,7 @@ const Header = () => {
             </li>
 
             <li className="nav__link">
-              <Link href="/contact">
+              <Link href="/contact" passHref>
                 <a
                   className={
                     Router.pathname === "/contact" ? "active" : "inactive"
@@ -184,19 +182,19 @@ const Header = () => {
               </Link>
             </li>
           </ul>
-          <a href="/loginPage">
+          <Link href="/loginPage">
             <button
               className="cta__grass hvr-grow login__btn"
               onClick={goToLogin}
             >
               Log in
             </button>
-          </a>
+          </Link>
 
           <div className="bottomNavigation">
             <ul className="nav bottomNavigation__navbar">
               <li className="nav__link">
-                <Link href="/">
+                <Link href="/" passHref>
                   <a
                     className={Router.pathname === "/" ? "active" : "inactive"}
                   >
@@ -205,7 +203,7 @@ const Header = () => {
                 </Link>
               </li>
               <li className="nav__link">
-                <Link href="/hotels">
+                <Link href="/hotels" passHref>
                   <a
                     className={
                       Router.pathname === "/hotels" ? "active" : "inactive"
@@ -216,7 +214,7 @@ const Header = () => {
                 </Link>
               </li>
               <li className="nav__link">
-                <Link href="/contact">
+                <Link href="/contact" passHref>
                   <a
                     className={
                       Router.pathname === "/contact" ? "active" : "inactive"

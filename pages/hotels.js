@@ -1,22 +1,19 @@
 import Head from "next/head";
 import Image from "next/image";
 import { useState, useEffect } from "react";
+import { Icon } from "@iconify/react";
 
 // Components
 import Header from "../components/header";
-import HeroSearch from "../components/hero/heroSerach";
 import HotelCard from "../components/hotelCards";
 import Footer from "../components/footer";
+import Hotels from "../../../pages/hotels";
 
 // Filters
 import Filter from "../components/filter";
-import { ResponsiveFilter } from "../components/filter/responsiveFilter/responsiveFilter.js";
+import { ResponsiveFilter } from "../components/filter/responsiveFilter";
 import FilterIcon from "../public/icons/filter_icon.svg";
 import FilterModal from "../components/Modals/FilterModal.js";
-
-import { Icon } from "@iconify/react";
-import { useState, useEffect } from "react";
-import Hotels from "../../../pages/hotels";
 
 // Styles
 import { HeroSearchWrapper } from "./heroSearch.style";
@@ -24,6 +21,7 @@ import { HeroSearchWrapper } from "./heroSearch.style";
 // Datepicker
 import { DateRangePicker } from "rsuite";
 import "rsuite/dist/rsuite.min.css";
+
 const styles = { width: 240, display: "block" };
 
 const options = [
@@ -74,7 +72,7 @@ const Hotels = ({ hotels }) => {
     <div>
       <Head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
         <title>Hotels</title>
         <meta
           name="description"
@@ -182,6 +180,7 @@ const Hotels = ({ hotels }) => {
                   src={FilterIcon}
                   width={24}
                   heigh={23}
+                  alt="Filter icon"
                   className="hotel__filterIcon"
                 />
               </div>

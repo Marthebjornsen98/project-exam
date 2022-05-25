@@ -1,5 +1,4 @@
 import styled from "styled-components";
-// import media from "styled-media-query";
 
 export const ResponsiveFilter = styled.div`
   .responsive__modal {
