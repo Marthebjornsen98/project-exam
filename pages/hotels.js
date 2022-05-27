@@ -16,7 +16,7 @@ import FilterIcon from "../public/icons/filter_icon.svg";
 import FilterModal from "../components/Modals/FilterModal.js";
 
 // Styles
-import { HeroSearchWrapper } from "../components/hero/heroSerach/heroSearch.style.js";
+import { HeroSearchWrapper } from "../styles/heroSearch.style.js";
 
 // Datepicker
 import { DateRangePicker } from "rsuite";
