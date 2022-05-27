@@ -6,7 +6,6 @@ import { useState } from "react";
 
 // Hotel img and description
 import { HotelCards } from "../../components/hotelCards/hotelCards.style";
-import { HotelDetailsWrapper } from "./id.style";
 
 //hotel detail icons
 import personIcon from "../../public/icons/person_icon.svg";
@@ -27,6 +26,7 @@ import { BaseUrl } from "../../libs/baseUrl";
 
 //about section
 import {
+  HotelDetailsWrapper,
   HotelDetail__about,
   HotelIcons,
   Facilities,
