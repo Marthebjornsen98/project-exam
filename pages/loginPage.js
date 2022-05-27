@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
+import Link from "next/link";
 import nookies from "nookies";
 import LoginComponent from "../components/loginComponent";
 
@@ -15,7 +16,7 @@ const loginPage = () => {
     <>
       <Head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
         <title>Log in</title>
         <meta
           name="description"
@@ -27,14 +28,16 @@ const loginPage = () => {
         <div className="login">
           <div className="login__form--side">
             <LoginLogo>
-              <a href="/">
-                <Image
-                  src={logo}
-                  width={138}
-                  height={43}
-                  alt="Holidaze logo in green"
-                />
-              </a>
+              <Link href="/" passHref>
+                <a>
+                  <Image
+                    src={logo}
+                    width={138}
+                    height={43}
+                    alt="Holidaze logo in green"
+                  />
+                </a>
+              </Link>
             </LoginLogo>
             <div className="login__form--wrapper">
               <h1 className="login__title">Log in</h1>

@@ -79,6 +79,10 @@ h4 {
   }
 }
 
+.hidden {
+  display: none;
+}
+
 //Buttons
 .cta__grass {
   background-color: $grass;
@@ -209,11 +213,6 @@ h4 {
   @media (max-width: 767px) {
     flex-direction: column;
   }
-}
-
-// Hidden
-.hidden {
-  display: hidden;
 }
 
 // Dropdown

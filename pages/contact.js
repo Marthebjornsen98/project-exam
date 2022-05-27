@@ -86,13 +86,15 @@ const Contact = () => {
           </div>
 
           <div className="logo__hidden">
-            <Link href="/">
-              <Image
-                src={Logo}
-                width={138}
-                height={43}
-                alt="Holidaze green logo"
-              />
+            <Link href="/" passHref>
+              <a>
+                <Image
+                  src={Logo}
+                  width={138}
+                  height={43}
+                  alt="Holidaze green logo"
+                />
+              </a>
             </Link>
           </div>
 

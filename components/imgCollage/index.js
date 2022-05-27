@@ -27,8 +27,10 @@ const Collage = () => {
               />
             </a>
           </Link>
-          <Link href="/hotels">
-            <h2 className="imgCollage__place">Oslo</h2>
+          <Link href="/hotels" passHref>
+            <a>
+              <h2 className="imgCollage__place">Oslo</h2>
+            </a>
           </Link>
         </div>
         <div className="imgCollage__image--wrapper hvr-grow">
@@ -43,8 +45,10 @@ const Collage = () => {
               />
             </a>
           </Link>
-          <Link href="/hotels">
-            <h2 className="imgCollage__place">Trondheim</h2>
+          <Link href="/hotels" passHref>
+            <a>
+              <h2 className="imgCollage__place">Trondheim</h2>
+            </a>
           </Link>
         </div>
         <div className="imgCollage__image--wrapper hvr-grow">
@@ -59,8 +63,10 @@ const Collage = () => {
               />
             </a>
           </Link>
-          <Link href="/hotels">
-            <h2 className="imgCollage__place">Bergen</h2>
+          <Link href="/hotels" passHref>
+            <a>
+              <h2 className="imgCollage__place">Bergen</h2>
+            </a>
           </Link>
         </div>
         <div className="imgCollage__image--wrapper hvr-grow">
@@ -75,8 +81,10 @@ const Collage = () => {
               />
             </a>
           </Link>
-          <Link href="/hotels">
-            <h2 className="imgCollage__place">Stavanger</h2>
+          <Link href="/hotels" passHref>
+            <a>
+              <h2 className="imgCollage__place">Stavanger</h2>
+            </a>
           </Link>
         </div>
         <div className="imgCollage__image--wrapper hvr-grow">
@@ -91,8 +99,10 @@ const Collage = () => {
               />
             </a>
           </Link>
-          <Link href="/hotels">
-            <h2 className="imgCollage__place">Bodø</h2>
+          <Link href="/hotels" passHref>
+            <a>
+              <h2 className="imgCollage__place">Bodø</h2>
+            </a>
           </Link>
         </div>
         <div className="imgCollage__image--wrapper hvr-grow">
@@ -107,8 +117,10 @@ const Collage = () => {
               />
             </a>
           </Link>
-          <Link href="/hotels">
-            <h2 className="imgCollage__place">Tønsberg</h2>
+          <Link href="/hotels" passHref>
+            <a>
+              <h2 className="imgCollage__place">Tønsberg</h2>
+            </a>
           </Link>
         </div>
       </div>

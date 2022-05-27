@@ -3,7 +3,6 @@ import Image from "next/image";
 import { useState, useEffect } from "react";
 import { Icon } from "@iconify/react";
 import { BaseUrl } from "../libs/baseUrl.js";
-import Select from "react-select";
 
 // Components
 import Header from "../components/header";
@@ -46,6 +45,7 @@ export const getStaticProps = async () => {
 const Hotels = ({ hotels }) => {
   // New api call
   const [fetchHotels, setFetchHotels] = useState(hotels);
+
   // Search bar
   const [isShowing, setIsShowing] = useState(false);
   const [isInputShowing, setIsInputShowing] = useState(false);
@@ -53,6 +53,8 @@ const Hotels = ({ hotels }) => {
   const [roomValue, setRoomValue] = useState();
   const [location, setLocation] = useState([]);
   const [query, setQuery] = useState("");
+  const [open, setOpen] = useState(false);
+
   // Filter
   const [openFilter, setOpenFilter] = useState(false);
   const [width, setWidth] = useState(global.innerWidth);
@@ -66,10 +68,15 @@ const Hotels = ({ hotels }) => {
     setQuery(event.target.value);
   };
 
-  const filterArea = () => {
-    return fetchHotels.filter(
-      (area) => area.area.toLowerCase().indexOf(query.toLocaleLowerCase()) > -1
-    );
+  const uniqueArray = (event) => {
+    let newArray = [];
+
+    for (let i = 0; i < event.length; i++) {
+      if (newArray.indexOf(event[i].area) === -1) {
+        newArray.push(event[i].area);
+      }
+    }
+    return newArray;
   };
 
   const filterHotels = () => {
@@ -78,15 +85,6 @@ const Hotels = ({ hotels }) => {
         hotel.area.toLowerCase().indexOf(query.toLocaleLowerCase()) > -1
     );
   };
-
-  const breakpoint = 768;
-
-  useEffect(() => {
-    const handleWindowResize = () => setWidth(global.innerWidth);
-    global.addEventListener("resize", handleWindowResize);
-
-    return () => global.removeEventListener("resize", handleWindowResize);
-  }, []);
 
   useEffect(() => {
     async function getData() {
@@ -116,16 +114,33 @@ const Hotels = ({ hotels }) => {
             <div className="heroSearch">
               <div className="heroSearch__container">
                 <span className="heroSearch__supportinghotel">Location</span>
-                <div>
+                <div className="heroSearch__input--wrapper">
                   {isInputShowing ? (
                     <>
                       <input
                         className="heroSearch__input"
+                        value={query}
+                        onClick={() => setOpen(true)}
                         onChange={(event) => handleSearch(event)}
                       />
-                      <ul>
-                        {filterArea().map(({ area, id }) => {
-                          return <li key={id}>{area}</li>;
+                      <ul
+                        className={
+                          open ? "heroSearch__search--result" : "hidden"
+                        }
+                      >
+                        {uniqueArray(filterHotels()).map((elm) => {
+                          return (
+                            <li
+                              key={elm}
+                              value={elm}
+                              onClick={() => {
+                                setQuery(elm), setOpen(false);
+                              }}
+                              className="heroSearch__search--text"
+                            >
+                              {elm}
+                            </li>
+                          );
                         })}
                       </ul>
                     </>
@@ -212,25 +227,23 @@ const Hotels = ({ hotels }) => {
 
         <div className="hotel__wrapper">
           <ResponsiveFilter>
-            {width < breakpoint ? (
-              <div
-                onClick={() => setOpenFilter(true)}
-                className="responsive__modal"
-              >
-                <Image
-                  src={FilterIcon}
-                  width={24}
-                  heigh={23}
-                  alt="Filter icon"
-                  className="hotel__filterIcon"
-                />
-              </div>
-            ) : (
-              <Filter className="responsive__filter" />
-            )}
+            <div
+              onClick={() => setOpenFilter(true)}
+              className="responsive__modal"
+            >
+              <Image
+                src={FilterIcon}
+                width={24}
+                heigh={23}
+                alt="Filter icon"
+                className="hotel__filterIcon"
+              />
+            </div>
 
-            {openFilter && <FilterModal setOpenFilter={setOpenFilter} />}
+            <Filter />
           </ResponsiveFilter>
+
+          {openFilter && <FilterModal setOpenFilter={setOpenFilter} />}
 
           <div className="hotelCard__wrapper">
             {filterHotels().map(

@@ -69,11 +69,16 @@ export const FilterWrapper = styled.div`
     }
 
     ${media.lessThan("768px")`
+
+    &__hidden {
+      display: none;
+    }
       &__icon {
         font-size: 1.5rem;
         margin-right: 10px;
       }
-        &__border {
+
+      &__border {
           width: 100%;
         }
     `}

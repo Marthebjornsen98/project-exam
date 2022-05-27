@@ -72,13 +72,15 @@ const CheckoutDetails = () => {
                     complete. A receipt and confirmation is on its way to your
                     inbox.
                   </p>
-                  <Link href="/hotels">
-                    <button
-                      className="cta__sage modal__deleteBtn"
-                      onClick={() => setConfetti(false)}
-                    >
-                      Continue shopping
-                    </button>
+                  <Link href="/hotels" passHref>
+                    <a>
+                      <button
+                        className="cta__sage modal__deleteBtn"
+                        onClick={() => setConfetti(false)}
+                      >
+                        Continue shopping
+                      </button>
+                    </a>
                   </Link>
                 </div>
               </div>

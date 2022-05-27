@@ -10,6 +10,11 @@ export const HeroImg = styled.div`
   background-size: cover;
   background-attachment: fixed;
 
+  ${media.lessThan("1024px")`
+    background-image: url(../backgroundImages/background_image_tablet_big.jpg);
+    height: 100vh;
+  `}
+
   ${media.lessThan("582px")`
     background-image: url(../backgroundImages/background-image_tablet.jpg);
     height: 100vh;

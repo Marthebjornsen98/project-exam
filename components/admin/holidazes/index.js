@@ -53,7 +53,7 @@ const Holidazes = ({ holidazes, jwt }) => {
                 Image
               </h4>
               <h4 className="holidazes__table--title holidazes__title">Name</h4>
-              <h4 className="holidazes__table--title holidazes__price">
+              <h4 className="holidazes__table--title holidazes__price--title">
                 Price
               </h4>
               <h4 className="holidazes__table--title holidazes__featured">

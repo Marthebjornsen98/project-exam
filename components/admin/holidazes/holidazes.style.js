@@ -2,8 +2,6 @@ import styled from "styled-components";
 
 export const HolidazesWrapper = styled.div`
   .holidazes {
-    /* width: 100%; */
-
     &__table {
       margin-bottom: 60px;
       display: flex;
@@ -40,15 +38,18 @@ export const HolidazesWrapper = styled.div`
       width: 150px;
     }
 
-    &__price {
-      width: 40px;
-      font-weight: 600;
-      color: #57b15b;
+    &__price--number {
+      font-family: "Overpass";
       font-size: 1rem;
+      width: 40px;
+      font-weight: 700;
+      color: #57b15b;
+    }
 
-      &--number {
-        font-family: "Overpass";
-      }
+    &__price--title {
+      width: 40px;
+      font-weight: 700;
+      color: #57b15b;
     }
 
     &__featured {

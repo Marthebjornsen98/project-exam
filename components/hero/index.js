@@ -1,6 +1,5 @@
 // Components
 import Header from "../header/index";
-import HeroSearch from "./heroSerach";
 
 // Styles
 import { HeroImg } from "./heroImg/heroImg.style";
@@ -11,7 +10,6 @@ const Hero = () => {
     <HeroImg>
       <HeroBanner>
         <Header />
-        {/* <HeroSearch /> */}
       </HeroBanner>
     </HeroImg>
   );

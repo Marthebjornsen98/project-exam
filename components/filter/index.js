@@ -11,7 +11,7 @@ const Filter = () => {
 
   return (
     <FilterWrapper>
-      <div className="filter">
+      <div className="filter filter__hidden">
         <div className="filter__wrapper">
           <h4 className="filter__title bold">Popular filters</h4>
           <CheckboxFilter
