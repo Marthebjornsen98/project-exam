@@ -41,18 +41,14 @@ export const CostumerReview = styled.div`
 
     &__img {
       border-radius: 10px;
-      width: 70px;
-      margin-right: 20px;
+    }
+
+    &__content {
+      margin-left: 20px;
     }
 
     &__name {
       line-height: 1.5rem;
-    }
-
-    &__quote {
-      color: #57b15b;
-      font-size: 7.25rem;
-      font-family: "Overpass";
     }
 
     &__country {

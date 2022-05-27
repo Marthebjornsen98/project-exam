@@ -10,6 +10,10 @@ export const HotelCards = styled.div`
       flex-direction: column;
     `}
 
+  ${media.lessThan("768px")`
+      margin: 0px 0px 30px 0px;
+    `}
+
   .hotelContent {
     width: 70%;
     margin-left: 30px;

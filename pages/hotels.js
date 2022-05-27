@@ -2,21 +2,22 @@ import Head from "next/head";
 import Image from "next/image";
 import { useState, useEffect } from "react";
 import { Icon } from "@iconify/react";
+import { BaseUrl } from "../libs/baseUrl.js";
+import Select from "react-select";
 
 // Components
 import Header from "../components/header";
 import HotelCard from "../components/hotelCards";
 import Footer from "../components/footer";
-import Hotels from "../../../pages/hotels";
 
 // Filters
 import Filter from "../components/filter";
-import { ResponsiveFilter } from "../components/filter/responsiveFilter";
+import { ResponsiveFilter } from "../components/filter/responsiveFilter/responsiveFilter";
 import FilterIcon from "../public/icons/filter_icon.svg";
 import FilterModal from "../components/Modals/FilterModal.js";
 
 // Styles
-import { HeroSearchWrapper } from "./heroSearch.style";
+import { HeroSearchWrapper } from "../components/hero/heroSerach/heroSearch.style.js";
 
 // Datepicker
 import { DateRangePicker } from "rsuite";
@@ -34,7 +35,7 @@ const options = [
 ];
 
 export const getStaticProps = async () => {
-  const res = await fetch("http://localhost:1337/holidazes");
+  const res = await fetch(`${BaseUrl}holidazes`);
   const data = await res.json();
 
   return {
@@ -43,22 +44,41 @@ export const getStaticProps = async () => {
 };
 
 const Hotels = ({ hotels }) => {
+  // New api call
+  const [fetchHotels, setFetchHotels] = useState(hotels);
+  // Search bar
   const [isShowing, setIsShowing] = useState(false);
   const [isInputShowing, setIsInputShowing] = useState(false);
   const [guestValue, setGuestValue] = useState();
   const [roomValue, setRoomValue] = useState();
-  const [searchText, setSearchText] = useState("");
-
-  const handleChangeGuests = (e) => {
-    setGuestValue(e.target.guestValue);
-  };
-
-  const handleChangeRooms = (api) => {
-    setRoomValue(api.target.roomValue);
-  };
-
+  const [location, setLocation] = useState([]);
+  const [query, setQuery] = useState("");
+  // Filter
   const [openFilter, setOpenFilter] = useState(false);
   const [width, setWidth] = useState(global.innerWidth);
+
+  const handleOnSearch = (event) => {
+    event.preventDefault();
+    setLocation(event.target.value);
+  };
+
+  const handleSearch = (event) => {
+    setQuery(event.target.value);
+  };
+
+  const filterArea = () => {
+    return fetchHotels.filter(
+      (area) => area.area.toLowerCase().indexOf(query.toLocaleLowerCase()) > -1
+    );
+  };
+
+  const filterHotels = () => {
+    return fetchHotels.filter(
+      (hotel) =>
+        hotel.area.toLowerCase().indexOf(query.toLocaleLowerCase()) > -1
+    );
+  };
+
   const breakpoint = 768;
 
   useEffect(() => {
@@ -66,6 +86,16 @@ const Hotels = ({ hotels }) => {
     global.addEventListener("resize", handleWindowResize);
 
     return () => global.removeEventListener("resize", handleWindowResize);
+  }, []);
+
+  useEffect(() => {
+    async function getData() {
+      const res = await fetch(`${BaseUrl}holidazes/`);
+      const data = await res.json();
+      setFetchHotels(data);
+    }
+
+    getData();
   }, []);
 
   return (
@@ -82,91 +112,102 @@ const Hotels = ({ hotels }) => {
       <Header />
       <main>
         <HeroSearchWrapper>
-          <div className="heroSearch">
-            <div className="heroSearch__container">
-              <span className="heroSearch__supportinghotel">Location</span>
-              <form onSubmit={submitAction}>
-                {isInputShowing ? (
-                  <input
-                    onChange={(e) => {
-                      setSearchText(e.target.value);
-                    }}
-                  />
-                ) : (
-                  <label
+          <form onSubmit={(event) => handleOnSearch(event)}>
+            <div className="heroSearch">
+              <div className="heroSearch__container">
+                <span className="heroSearch__supportinghotel">Location</span>
+                <div>
+                  {isInputShowing ? (
+                    <>
+                      <input
+                        className="heroSearch__input"
+                        onChange={(event) => handleSearch(event)}
+                      />
+                      <ul>
+                        {filterArea().map(({ area, id }) => {
+                          return <li key={id}>{area}</li>;
+                        })}
+                      </ul>
+                    </>
+                  ) : (
+                    <label
+                      className="heroSearch__inputName"
+                      onClick={() => setIsInputShowing(true)}
+                    >
+                      Where are you going?
+                    </label>
+                  )}
+                </div>
+              </div>
+
+              <div className="heroSearch__container">
+                <span className="heroSearch__supportinghotel">Add date</span>
+                <div>
+                  {isShowing ? (
+                    <DateRangePicker
+                      size="md"
+                      placeholder="Select date"
+                      style={styles}
+                    />
+                  ) : (
+                    <label
+                      className="heroSearch__inputName"
+                      onClick={() => setIsShowing(true)}
+                    >
+                      Check in/out
+                    </label>
+                  )}
+                </div>
+              </div>
+
+              <div className="heroSearch__container">
+                <span className="heroSearch__supportinghotel">Travelers</span>
+                <div>
+                  <select
+                    value={guestValue}
+                    onChange={() => setGuestValue(guestValue)}
                     className="heroSearch__inputName"
-                    onClick={() => setIsInputShowing(true)}
                   >
-                    Where are you going?
-                  </label>
-                )}
-              </form>
-            </div>
+                    <option>Add guests</option>
+                    {options.map(({ id, label }) => {
+                      return (
+                        <option key={id} value={guestValue}>
+                          {label}
+                        </option>
+                      );
+                    })}
+                  </select>
+                </div>
+              </div>
 
-            <div className="heroSearch__container">
-              <span className="heroSearch__supportinghotel">Travelers</span>
-              <form>
-                <select
-                  value={guestValue}
-                  onChange={handleChangeGuests}
-                  className="heroSearch__inputName"
-                >
-                  <option>Add guests</option>
-                  {options.map(({ id, label }) => {
-                    return (
-                      <option key={id} value={guestValue}>
-                        {label}
-                      </option>
-                    );
-                  })}
-                </select>
-              </form>
-            </div>
-
-            <div className="heroSearch__container">
-              <span className="heroSearch__supportinghotel">Add date</span>
-              <form>
-                {isShowing ? (
-                  <DateRangePicker
-                    size="md"
-                    placeholder="Select date"
-                    style={styles}
-                  />
-                ) : (
-                  <label
+              <div className="heroSearch__container">
+                <span className="heroSearch__supportinghotel">Rooms</span>
+                <div>
+                  <select
+                    value={roomValue}
+                    onChange={() => setRoomValue(roomValue)}
                     className="heroSearch__inputName"
-                    onClick={() => setIsShowing(true)}
                   >
-                    Check in/out
-                  </label>
-                )}
-              </form>
-            </div>
+                    <option>Add rooms</option>
+                    {options.map(({ id, label }) => {
+                      return (
+                        <option key={id} value={roomValue}>
+                          {label}
+                        </option>
+                      );
+                    })}
+                  </select>
+                </div>
+              </div>
 
-            <div className="heroSearch__container">
-              <span className="heroSearch__supportinghotel">Rooms</span>
-              <form>
-                <select
-                  value={roomValue}
-                  onChange={handleChangeRooms}
-                  className="heroSearch__inputName"
-                >
-                  <option>Add rooms</option>
-                  {options.map(({ id, label }) => {
-                    return (
-                      <option key={id} value={roomValue}>
-                        {label}
-                      </option>
-                    );
-                  })}
-                </select>
-              </form>
+              <button className="heroSearch__button" type="submit">
+                <Icon
+                  icon="charm:search"
+                  className="heroSearch__button--icon"
+                />
+              </button>
             </div>
-
-            <button className="heroSearch__button" type="submit">
-              <Icon icon="charm:search" className="heroSearch__button--icon" />
-            </button>
-          </div>
+          </form>
         </HeroSearchWrapper>
 
         <div className="hotel__wrapper">
@@ -192,42 +233,32 @@ const Hotels = ({ hotels }) => {
           </ResponsiveFilter>
 
           <div className="hotelCard__wrapper">
-            {hotels
-              .filter((value) => {
-                if (searchText == "") {
-                  return value;
-                } else if (
-                  value.title.toLowerCase().includes(searchText.toLowerCase())
-                ) {
-                  return value;
-                }
-              })
-              .hotels.map(
-                ({
-                  id,
-                  title,
-                  location,
-                  price,
-                  description,
-                  details,
-                  hotels_image,
-                  stars,
-                }) => {
-                  return (
-                    <HotelCard
-                      key={id}
-                      id={id}
-                      title={title}
-                      location={location}
-                      price={price}
-                      description={description}
-                      details={details}
-                      hotels_image={hotels_image}
-                      stars={stars}
-                    />
-                  );
-                }
-              )}
+            {filterHotels().map(
+              ({
+                id,
+                title,
+                location,
+                price,
+                description,
+                details,
+                hotels_image,
+                stars,
+              }) => {
+                return (
+                  <HotelCard
+                    key={id}
+                    id={id}
+                    title={title}
+                    location={location}
+                    price={price}
+                    description={description}
+                    details={details}
+                    hotels_image={hotels_image}
+                    stars={stars}
+                  />
+                );
+              }
+            )}
           </div>
         </div>
       </main>

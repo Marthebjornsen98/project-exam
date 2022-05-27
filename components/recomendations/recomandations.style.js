@@ -2,7 +2,7 @@ import styled from "styled-components";
 import media from "styled-media-query";
 
 export const RecomandationWrapper = styled.div`
-  margin: 100px auto;
+  margin: 50px auto;
 
   ${media.lessThan("768px")`
       margin: 50px auto;
@@ -12,7 +12,7 @@ export const RecomandationWrapper = styled.div`
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    margin-top: 30px;
+    margin-top: 20px;
 
     &__wrapper {
       width: 32%;

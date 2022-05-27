@@ -1,12 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect } from "react";
+import { BaseUrl } from "../../libs/baseUrl.js";
 
 // Styles
 import { RecomandationWrapper } from "./recomandations.style";
 
 // Icons
-import bedIcon from "../../public/icons/bed_green.svg";
+import calenderIcon from "../../public/icons/calender.svg";
 import personIcon from "../../public/icons/person_icon.svg";
 import pinIcon from "../../public/icons/pin_icon.svg";
 
@@ -15,7 +16,7 @@ const Recomandations = () => {
 
   useEffect(() => {
     async function getData() {
-      const res = await fetch("http://localhost:1337/holidazes/");
+      const res = await fetch(`${BaseUrl}holidazes/`);
       const data = await res.json();
       setApi(data);
     }
@@ -48,10 +49,10 @@ const Recomandations = () => {
                   <div className="recomendation__icon--wrapper">
                     <div className="recomendation__icons">
                       <Image
-                        src={bedIcon}
+                        src={calenderIcon}
                         width={32}
                         height={32}
-                        alt="Bed icon"
+                        alt="Calender icon"
                       />
                       <p className="body-text semi-bold recomendation__icon--text">
                         20.06.2022

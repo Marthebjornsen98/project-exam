@@ -18,16 +18,6 @@ const SignupSchema = Yup.object().shape({
     .min(10, "The description is too short")
     .max(300, "The description is too long")
     .required("Description is required"),
-  // slider_img: Yup.object().shape({
-  //   slider_img1: Yup.string().required("Image is required"),
-  //   slider_img_2: Yup.string().required("Image is required"),
-  //   slider_img_3: Yup.string().required("Image is required"),
-  //   slider_img_4: Yup.string().required("Image is required"),
-  //   slider_img_alt_1: Yup.string().required("Description is required"),
-  //   slider_img_alt_2: Yup.string().required("Description is required"),
-  //   slider_img_alt_3: Yup.string().required("Description is required"),
-  //   slider_img_alt_4: Yup.string().required("Description is required"),
-  // }),
   about: Yup.string()
     .min(2, "The text is too short")
     .max(100, "The text is too long")
@@ -43,14 +33,6 @@ const SignupSchema = Yup.object().shape({
     .max(100, "The about title  is too long")
     .required("Title is required"),
   area: Yup.string().required("Area is required"),
-  // stars: Yup.array()
-  //   .of(
-  //     Yup.object().shape({
-  //       star: Yup.boolean().required("Required"),
-  //     })
-  //   )
-  //   .required("Stars is required")
-  //   .min(2, "You must have 2 stars"),
 });
 
 const AddHotel = ({ setIfOpen, jwt }) => {

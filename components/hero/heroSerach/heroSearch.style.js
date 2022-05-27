@@ -2,27 +2,24 @@ import styled from "styled-components";
 import media from "styled-media-query";
 
 export const HeroSearchWrapper = styled.div`
-  width: 90%;
+  width: 100%;
   max-width: 1650px;
   min-width: 300px;
-  margin: 0px auto 40px;
-
-  ${media.lessThan("768px")`
-      display: flex;
-     justify-content: center;
-     margin-bottom: 150px;
-  `}
 
   .heroSearch {
     display: flex;
-    padding: 30px;
+    width: 100%;
+    margin: 40px 0px 70px;
     border-radius: 10px;
     background-color: #fff;
     justify-content: space-between;
 
     &__input {
-      height: 45px;
-      width: 250px;
+      border: solid 1px #dae8db;
+      height: 35px;
+      border-radius: 6px;
+      width: 100%;
+      padding: 0px 10px;
     }
 
     &__search--value {
@@ -65,28 +62,28 @@ export const HeroSearchWrapper = styled.div`
       background-color: #57b15b;
       border-radius: 15px;
 
+      &:hover {
+        background-color: #dae8db;
+        cursor: pointer;
+
+        &--icon {
+          color: #1c4726;
+        }
+      }
+
       &--icon {
         color: #fff;
         font-size: 1.75rem;
       }
-
-      &:hover {
-        background-color: #dae8db;
-        cursor: pointer;
-      }
     }
 
-    ${media.lessThan("1054px")`
-      width: 350px;
-      padding: 30px;
+    ${media.lessThan("900px")`
+      margin: 10px 0px 10px;
+      width: 300px;
       flex-direction: column;
 
       &__container {
-        margin-bottom: 30px;
-      }
-
-      &__button {
-        padding: 8px 15px;
+        margin-bottom: 20px;
       }
     `}
 

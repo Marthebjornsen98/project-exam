@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
+import Link from "next/link";
 import { Icon } from "@iconify/react";
 import { useState } from "react";
 
@@ -9,19 +10,20 @@ import { HotelDetailsWrapper } from "./id.style";
 
 //hotel detail icons
 import personIcon from "../../public/icons/person_icon.svg";
-import numberReviewIcon from "../../public/assets/number_review_icon.svg";
-import guestReviewIcon from "../../public/assets/guest_review_icon.svg";
-import nonSmokingIcon from "../../public/assets/nonSmoking_icon.svg";
+import numberReviewIcon from "../../public/icons/number_review_icon.svg";
+import guestReviewIcon from "../../public/icons/guest_review_icon.svg";
+import nonSmokingIcon from "../../public/icons/nonSmoking_icon.svg";
 
 //hotel facility icons
-import barIcon from "../../public/assets/bar_icon.svg";
-import breakfastIcon from "../../public/assets/breakfast_icon.svg";
-import teaCoffeeIcon from "../../public/assets/coffee_icon.svg";
-import fitnessIcon from "../../public/assets/fitness_icon.svg";
-import parkingIcon from "../../public/assets/parking_icon.svg";
-import restaurantIcon from "../../public/assets/restaurant_icon.svg";
-import roomServiceIcon from "../../public/assets/roomService_icon.svg";
-import swimmingpoolIcon from "../../public/assets/swimmingpool_icon.svg";
+import barIcon from "../../public/icons/bar_icon.svg";
+import breakfastIcon from "../../public/icons/breakfast_icon.svg";
+import teaCoffeeIcon from "../../public/icons/coffee_icon.svg";
+import fitnessIcon from "../../public/icons/fitness_icon.svg";
+import parkingIcon from "../../public/icons/parking_icon.svg";
+import restaurantIcon from "../../public/icons/restaurant_icon.svg";
+import roomServiceIcon from "../../public/icons/roomService_icon.svg";
+import swimmingpoolIcon from "../../public/icons/swimmingpool_icon.svg";
+import { BaseUrl } from "../../libs/baseUrl";
 
 //about section
 import {
@@ -51,7 +53,7 @@ import { Progress } from "react-sweet-progress";
 import "react-sweet-progress/lib/style.css";
 
 export const getStaticPaths = async () => {
-  const res = await fetch("http:localhost:1337/holidazes");
+  const res = await fetch(`${BaseUrl}holidazes`);
   const data = await res.json();
 
   const paths = data.map(({ id }) => {
@@ -68,7 +70,7 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps = async (context) => {
   const id = context.params.id;
-  const res = await fetch("http:localhost:1337/holidazes/" + id);
+  const res = await fetch(`${BaseUrl}holidazes/` + id);
   const data = await res.json();
 
   return {

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import axios from "axios";
+import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import { parseCookies } from "nookies";
 
@@ -12,6 +13,12 @@ const Header = () => {
   const cookies = parseCookies().jwt;
   const Router = useRouter();
 
+  const [loggedIn, setLoggedIn] = useState(false);
+
+  useEffect(() => {
+    if (cookies) setLoggedIn(true);
+  }, [cookies]);
+
   const goToLogin = () => {
     Router.push("/loginPage");
   };
@@ -19,23 +26,27 @@ const Header = () => {
   const logout = async () => {
     try {
       await axios.get("/api/logout");
-      Router.push("/index");
+      Router.push("/");
+      console.log("im clicking");
     } catch (e) {
       console.log(e);
     }
   };
+
   return (
     <>
-      {cookies ? (
+      {loggedIn ? (
         <Nav>
-          <Link href="/">
-            <Image
-              src={Logo}
-              className="logo"
-              width={130}
-              height={40}
-              alt="Holidaze green logo"
-            />
+          <Link href="/" passHref>
+            <a>
+              <Image
+                src={Logo}
+                className="logo"
+                width={130}
+                height={40}
+                alt="Holidaze green logo"
+              />
+            </a>
           </Link>
 
           <ul className="nav topNavigation">
@@ -139,14 +150,16 @@ const Header = () => {
         </Nav>
       ) : (
         <Nav>
-          <Link href="/">
-            <Image
-              src={Logo}
-              className="logo"
-              width={130}
-              height={40}
-              alt="Holidaze green logo"
-            />
+          <Link href="/" passHref>
+            <a>
+              <Image
+                src={Logo}
+                className="logo"
+                width={130}
+                height={40}
+                alt="Holidaze green logo"
+              />
+            </a>
           </Link>
 
           <ul className="nav topNavigation">

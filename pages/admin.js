@@ -72,13 +72,15 @@ const Admin = ({ holidazes, messages, enquiries, jwt }) => {
 
       <AdminPage>
         <div className="adminPage__header">
-          <Link href="/">
-            <Image
-              src={logo}
-              width={138}
-              height={43}
-              alt="Holidaze logo in green"
-            />
+          <Link href="/" passHref>
+            <a>
+              <Image
+                src={logo}
+                width={138}
+                height={43}
+                alt="Holidaze logo in green"
+              />
+            </a>
           </Link>
           <button className="cta__grass hvr-grow" onClick={logout}>
             Log out

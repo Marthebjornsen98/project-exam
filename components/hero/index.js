@@ -11,7 +11,7 @@ const Hero = () => {
     <HeroImg>
       <HeroBanner>
         <Header />
-        <HeroSearch />
+        {/* <HeroSearch /> */}
       </HeroBanner>
     </HeroImg>
   );

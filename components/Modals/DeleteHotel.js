@@ -50,7 +50,7 @@ const DeleteHotel = ({ setDeleteHotel, deleteId, jwt }) => {
               The hotel was deleted sucessfully!
             </p>
             <button
-              className="cta__grass modal__deleteBtn"
+              className="cta__sage modal__deleteBtn"
               onClick={() => setDeleteHotel(false)}
             >
               Close
@@ -70,7 +70,7 @@ const DeleteHotel = ({ setDeleteHotel, deleteId, jwt }) => {
             </p>
 
             <button
-              className="cta__grass modal__deleteBtn"
+              className="cta__sage modal__deleteBtn"
               onClick={() => handleDelete()}
             >
               Delete hotel

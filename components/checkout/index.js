@@ -27,13 +27,15 @@ const Checkout = ({
         <div className="modal__content checkoutModal__content">
           <CheckoutPage>
             <div className="checkout">
-              <Link href="/">
-                <Image
-                  src={Logo}
-                  width={138}
-                  height={43}
-                  alt="Holidaze logo in green"
-                />
+              <Link href="/" passHref>
+                <a>
+                  <Image
+                    src={Logo}
+                    width={138}
+                    height={43}
+                    alt="Holidaze logo in green"
+                  />
+                </a>
               </Link>
               <div className="checkout__orderSummary">
                 <h4 className="checkout__title">Order summary</h4>

@@ -7,6 +7,7 @@ import { useState } from "react";
 // Components
 import { ContactWrapper } from "../styles/contact.style";
 import ContactModal from "../components/Modals/ContactModal";
+import { BaseUrl } from "../libs/baseUrl";
 
 // Images
 import contactImg from "../public/assets/contact_img.jpg";
@@ -39,10 +40,7 @@ const Contact = () => {
   const handleSubmit = async (values) => {
     console.log(values);
     try {
-      let response = await axios.post(
-        "http://localhost:1337/contact-messages",
-        values
-      );
+      let response = await axios.post(`${BaseUrl}contact-messages`, values);
       setError(false);
       console.log(response);
     } catch (err) {
@@ -75,13 +73,15 @@ const Contact = () => {
               objectFit="cover"
               priority
             />
-            <Link href="/">
-              <Image
-                src={Logo}
-                width={138}
-                height={43}
-                alt="Holidaze green logo"
-              />
+            <Link href="/" passHref>
+              <a>
+                <Image
+                  src={Logo}
+                  width={138}
+                  height={43}
+                  alt="Holidaze green logo"
+                />
+              </a>
             </Link>
           </div>
 

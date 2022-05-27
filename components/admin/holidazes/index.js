@@ -23,22 +23,22 @@ const Holidazes = ({ holidazes, jwt }) => {
 
     if (showAll) {
       return (
-        <p className="body-text holidazes__description">
+        <div className="body-text holidazes__description">
           {content}
           <p onClick={showLess} className="holidazes__readMore-readLess">
             Read less
           </p>
-        </p>
+        </div>
       );
     }
 
     return (
-      <p className="body-text holidazes__description">
+      <div className="body-text holidazes__description">
         {toShow}
         <p onClick={showMore} className="holidazes__readMore-readLess">
           Read more
         </p>
-      </p>
+      </div>
     );
   };
 
