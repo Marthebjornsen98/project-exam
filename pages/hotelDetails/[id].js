@@ -32,7 +32,7 @@ import {
   Facilities,
   GuestReview,
   ProgressButton,
-} from "./id.style";
+} from "../../styles/id.style";
 
 // Components
 import Header from "../../components/header";
