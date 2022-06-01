@@ -21,6 +21,7 @@ Clone the repo:
 - [https://github.com/Marthebjornsen98/project-exam.git](https://github.com/Marthebjornsen98/project-exam.git)
 
 Install dependencies:
+<br/>
 ```npm install```
 
 Run project:
