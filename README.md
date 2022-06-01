@@ -1,22 +1,28 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Wrist
 
-## Getting Started
+Adding image
 
-First, run the development server:
+## Description
+This project was my semester exam for spring 2022, I made a semi functional hotel booking website called Holidaze. I made the design in figma and started coding with Visual Studio Code, the languages I used was React, Next JS, HTML and CSS/SCSS. The colors in the design is inspired by Norwegian forests and their beauty. The use of three different greens makes the website more dynamic and adds depth to the design. 
 
-```bash
-npm run dev
-# or
-yarn dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Built With
+- HTML
+- CSS
+- SCSS
+- Next.js
+- React
+- Visual Studio Code
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+### Starting up
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+Clone the repo:
+- git clone
+- [git@github.com:NoroffFEU/portfolio-1-example.git](https://github.com/Marthebjornsen98/semester-project-wrist.git)
 
-## User Strapi
+Run project:
+<br/>
+```npm run dev```
 
-username/email: admin@admin.com
-password: Admin1234
+### Contact
+My LinkedIn: https://www.linkedin.com/in/marthe-bj%C3%B8rnsen/
