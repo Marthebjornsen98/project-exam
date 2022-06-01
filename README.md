@@ -18,7 +18,7 @@ This project was my semester exam for spring 2022, I made a semi functional hote
 
 Clone the repo:
 - git clone
-- https://github.com/Marthebjornsen98/project-exam.git
+- [https://github.com/Marthebjornsen98/project-exam.git](https://github.com/Marthebjornsen98/project-exam.git)
 
 Run project:
 <br/>
