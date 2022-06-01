@@ -20,6 +20,9 @@ Clone the repo:
 - git clone
 - [https://github.com/Marthebjornsen98/project-exam.git](https://github.com/Marthebjornsen98/project-exam.git)
 
+Install dependencies:
+```npm install```
+
 Run project:
 <br/>
 ```npm run dev```
