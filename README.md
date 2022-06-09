@@ -1,4 +1,4 @@
-# Wrist
+# Holidaze
 
 Adding image
 
