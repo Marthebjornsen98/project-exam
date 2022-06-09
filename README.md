@@ -1,6 +1,6 @@
 # Holidaze
 
-Adding image
+![image](https://cute-dasik-066857.netlify.app/img/Mockup_Holidaze.jpg)
 
 ## Description
 This project was my semester exam for spring 2022, I made a semi functional hotel booking website called Holidaze. I made the design in figma and started coding with Visual Studio Code, the languages I used was React, Next JS, HTML and CSS/SCSS. The colors in the design is inspired by Norwegian forests and their beauty. The use of three different greens makes the website more dynamic and adds depth to the design. 
